@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": [
+      "esnext"
+    ],
+    "outDir": "release",
+    "declaration": true,
+    "downlevelIteration": true,
+    "strict": false,
+    "types": [
+      "node",
+      "isomorphic-fetch"
+    ],
+    "esModuleInterop": true
+  }
+}

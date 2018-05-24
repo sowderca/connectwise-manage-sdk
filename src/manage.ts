@@ -1,5 +1,8 @@
 'use strict';
 
+import { URL } from 'url';
+import { ManageCompanyInfo } from './lib/info';
+import fetch from 'isomorphic-fetch';
 import {
     AccountingPackagesApi,
     AddressFormatsApi,
@@ -632,1263 +635,364 @@ export class ApiClient {
     public readonly ProcurementSettingsApi: ProcurementSettingsApi;
     public readonly WorkflowAttachmentsApi: WorkflowAttachmentsApi;
     private readonly authKey: string;
-    public constructor(host: string, companyId: string, publicKey: string, privateKey: string) {
-        this.authKey = Buffer.from(`${companyId}+${publicKey}:${privateKey}`, 'base64').toString();
-        this.AccountingPackagesApi = new AccountingPackagesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AddressFormatsApi = new AddressFormatsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementBatchSetupsApi = new AgreementBatchSetupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementTypeBoardDefaultsApi = new AgreementTypeBoardDefaultsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementTypeWorkRoleExclusionsApi = new AgreementTypeWorkRoleExclusionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementTypeWorkRolesApi = new AgreementTypeWorkRolesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementTypeWorkTypeExclusionsApi = new AgreementTypeWorkTypeExclusionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementTypeWorkTypesApi = new AgreementTypeWorkTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AuthAnvilsApi = new AuthAnvilsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BillingCyclesApi = new BillingCyclesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BillingSetupRoutingsApi = new BillingSetupRoutingsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BillingSetupsApi = new BillingSetupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BillingStatusesApi = new BillingStatusesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BillingTermsApi = new BillingTermsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BoardAutoAssignResourcesApi = new BoardAutoAssignResourcesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BoardAutoTemplatesApi = new BoardAutoTemplatesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BoardItemAssociationsApi = new BoardItemAssociationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BoardNotificationsApi = new BoardNotificationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BoardStatusNotificationsApi = new BoardStatusNotificationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BoardTypeSubTypeItemAssociationsApi = new BoardTypeSubTypeItemAssociationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CalendarsApi = new CalendarsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ChargeCodeExpenseTypesApi = new ChargeCodeExpenseTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ChargeCodesApi = new ChargeCodesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ClassificationsApi = new ClassificationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CommissionsApi = new CommissionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CompanyGroupsApi = new CompanyGroupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CompanyPickerItemsApi = new CompanyPickerItemsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ConfigurationTypeQuestionValuesApi = new ConfigurationTypeQuestionValuesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ContactGroupsApi = new ContactGroupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CorporateStructureLevelsApi = new CorporateStructureLevelsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CorporateStructuresApi = new CorporateStructuresApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CountriesApi = new CountriesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CrmsApi = new CrmsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CustomReportParametersApi = new CustomReportParametersApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CustomReportsApi = new CustomReportsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.DeliveryMethodsApi = new DeliveryMethodsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.DepartmentLocationsApi = new DepartmentLocationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.DepartmentsApi = new DepartmentsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.DocumentsSetupApi = new DocumentsSetupApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.EmailConnectorParsingRulesApi = new EmailConnectorParsingRulesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.EmailConnectorParsingStylesApi = new EmailConnectorParsingStylesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.EmailConnectorsApi = new EmailConnectorsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.EmailTokensApi = new EmailTokensApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ExpenseReportsApi = new ExpenseReportsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ExpenseTypeExternalIntegrationReferencesApi = new ExpenseTypeExternalIntegrationReferencesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.HolidayListsApi = new HolidayListsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.HolidaysApi = new HolidaysApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ImapsApi = new ImapsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ImpactsApi = new ImpactsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ImportsMassMaintenanceApi = new ImportsMassMaintenanceApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.IntegratorLoginsApi = new IntegratorLoginsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.InvoiceEmailTemplatesApi = new InvoiceEmailTemplatesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.InvoiceTemplatesApi = new InvoiceTemplatesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.InvoiceTemplateSetupsApi = new InvoiceTemplateSetupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.KPICategoriesApi = new KPICategoriesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.KPIsApi = new KPIsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.LdapConfigurationsApi = new LdapConfigurationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.LegacyCampaignSubTypesApi = new LegacyCampaignSubTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.LegacySubCategoriesApi = new LegacySubCategoriesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.LocationDepartmentsApi = new LocationDepartmentsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.LocationWorkRolesApi = new LocationWorkRolesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ManagedDevicesIntegrationCrossReferencesApi = new ManagedDevicesIntegrationCrossReferencesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ManagedDevicesIntegrationLoginsApi = new ManagedDevicesIntegrationLoginsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ManagedDevicesIntegrationNotificationsApi = new ManagedDevicesIntegrationNotificationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ManagedDevicesIntegrationsApi = new ManagedDevicesIntegrationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ManagementExecuteManagedItSyncsApi = new ManagementExecuteManagedItSyncsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ManagementItSolutionAgreementInterfaceParametersApi = new ManagementItSolutionAgreementInterfaceParametersApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ManagementItSolutionsApi = new ManagementItSolutionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ManagementLogsApi = new ManagementLogsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ManagementNetworksSecurityApi = new ManagementNetworksSecurityApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ManagementReportNotificationsApi = new ManagementReportNotificationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ManagementsApi = new ManagementsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.MemberAccrualsApi = new MemberAccrualsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.MemberCertificationsApi = new MemberCertificationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.MemberDelegationsApi = new MemberDelegationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.MemberSkillsApi = new MemberSkillsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.MenuEntryLocationsApi = new MenuEntryLocationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.NotificationRecipientsApi = new NotificationRecipientsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OrderStatusesEmailTemplateApi = new OrderStatusesEmailTemplateApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OrderStatusNotificationsApi = new OrderStatusNotificationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OthersApi = new OthersApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ParsingTypesApi = new ParsingTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ParsingVariablesApi = new ParsingVariablesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PaymentTypesApi = new PaymentTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PortalCalendarsApi = new PortalCalendarsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PortalConfigurationInvoiceSetupsApi = new PortalConfigurationInvoiceSetupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PortalConfigurationOpportunitySetupsApi = new PortalConfigurationOpportunitySetupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PortalConfigurationPasswordEmailSetupsApi = new PortalConfigurationPasswordEmailSetupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PortalConfigurationProjectSetupsApi = new PortalConfigurationProjectSetupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PortalConfigurationsApi = new PortalConfigurationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PortalConfigurationServiceSetupsApi = new PortalConfigurationServiceSetupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PortalReportsApi = new PortalReportsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PortalSecuritySettingsApi = new PortalSecuritySettingsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PortalSecurityLevelsApi = new PortalSecurityLevelsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ProjectSecurityRolesApi = new ProjectSecurityRolesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ProjectSecurityRoleSettingsApi = new ProjectSecurityRoleSettingsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ProjectStatusesApi = new ProjectStatusesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ProjectTypesApi = new ProjectTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PurchaseOrderStatusEmailTemplatesApi = new PurchaseOrderStatusEmailTemplatesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PurchaseOrderStatusesApi = new PurchaseOrderStatusesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PurchaseOrderStatusNotificationsApi = new PurchaseOrderStatusNotificationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ReportCardDetailsApi = new ReportCardDetailsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ReportCardsApi = new ReportCardsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ReportingServicesApi = new ReportingServicesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.RmaStatusEmailTemplatesApi = new RmaStatusEmailTemplatesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.RmaStatusesApi = new RmaStatusesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.RmaStatusNotificationsApi = new RmaStatusNotificationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SalesQuotasApi = new SalesQuotasApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SalesTeamMembersApi = new SalesTeamMembersApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SalesTeamsApi = new SalesTeamsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ScheduleColorsApi = new ScheduleColorsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ScheduleDetailsApi = new ScheduleDetailsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SecurityRolesApi = new SecurityRolesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SecurityRoleSettingsApi = new SecurityRoleSettingsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ServiceEmailTemplatesApi = new ServiceEmailTemplatesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ServiceLocationsApi = new ServiceLocationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ServicesApi = new ServicesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ServiceSignoffsApi = new ServiceSignoffsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ServiceSurveyQuestionsApi = new ServiceSurveyQuestionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ServiceSurveysApi = new ServiceSurveysApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ServiceTeamsApi = new ServiceTeamsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ServiceTemplatesApi = new ServiceTemplatesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SetupScreensApi = new SetupScreensApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SeveritiesApi = new SeveritiesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SLAPrioritiesApi = new SLAPrioritiesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SLAsApi = new SLAsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.StatesApi = new StatesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.StatusExternalIntegrationReferencesApi = new StatusExternalIntegrationReferencesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SurveyOptionsApi = new SurveyOptionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SurveyQuestionValuesApi = new SurveyQuestionValuesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TracksApi = new TracksApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TaxCodeExpenseTypeExemptionsApi = new TaxCodeExpenseTypeExemptionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TaxCodeProductTypeExemptionsApi = new TaxCodeProductTypeExemptionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TaxCodeWorkRoleExemptionsApi = new TaxCodeWorkRoleExemptionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TaxIntegrationsApi = new TaxIntegrationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TeamMembersApi = new TeamMembersApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TicketSyncsApi = new TicketSyncsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TimeAccrualDetailsApi = new TimeAccrualDetailsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TimeAccrualsApi = new TimeAccrualsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TimeExpensesApi = new TimeExpensesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TimePeriodsApi = new TimePeriodsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TimePeriodSetupsApi = new TimePeriodSetupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TimeSheetsApi = new TimeSheetsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TimeZonesApi = new TimeZonesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TimeZoneSetupsApi = new TimeZoneSetupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TrackActionsApi = new TrackActionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WarehouseBinsApi = new WarehouseBinsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WarehousesApi = new WarehousesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WorkflowActionAutomateParametersApi = new WorkflowActionAutomateParametersApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WorkflowActionsApi = new WorkflowActionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WorkflowEventsApi = new WorkflowEventsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WorkflowNotifyTypesApi = new WorkflowNotifyTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WorkflowsApi = new WorkflowsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WorkflowTableTypesApi = new WorkflowTableTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WorkflowTriggerOptionsApi = new WorkflowTriggerOptionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WorkflowTriggersApi = new WorkflowTriggersApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WorkRoleLocationsApi = new WorkRoleLocationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WorkRolesApi = new WorkRolesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WorkTypeExternalIntegrationReferencesApi = new WorkTypeExternalIntegrationReferencesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WorkTypesApi = new WorkTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AccountingBatchesApi = new AccountingBatchesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AccountingUnpostedExpensesApi = new AccountingUnpostedExpensesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AccountingUnpostedProcurementsApi = new AccountingUnpostedProcurementsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AccountingUnpostedinvoicesApi = new AccountingUnpostedinvoicesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ActivitiesApi = new ActivitiesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ActivityStatusesApi = new ActivityStatusesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ActivityStopwatchesApi = new ActivityStopwatchesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ActivityTypesApi = new ActivityTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AdjustmentDetailsApi = new AdjustmentDetailsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AdjustmentTypesApi = new AdjustmentTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AdjustmentsApi = new AdjustmentsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementSitesApi = new AgreementSitesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementAdditionsApi = new AgreementAdditionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementAdjustmentsApi = new AgreementAdjustmentsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementBoardDefaultsApi = new AgreementBoardDefaultsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementTypesApi = new AgreementTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementWorkRoleExclusionsApi = new AgreementWorkRoleExclusionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementWorkRolesApi = new AgreementWorkRolesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementWorkTypeExclusionsApi = new AgreementWorkTypeExclusionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AgreementWorkTypesApi = new AgreementWorkTypesApi(`https://${host}/v4_6_release/apis/3.0`)
-        this.AgreementsApi = new AgreementsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AuditTrailApi = new AuditTrailApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BatchApi = new BatchApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BoardExcludedMembersApi = new BoardExcludedMembersApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BoardItemsApi = new BoardItemsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BoardStatusesApi = new BoardStatusesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BoardSubTypesApi = new BoardSubTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BoardTeamsApi = new BoardTeamsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BoardTypesApi = new BoardTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.BoardsApi = new BoardsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CallbacksApi = new CallbacksApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CampaignAuditsApi = new CampaignAuditsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CampaignEmailsOpenedApi = new CampaignEmailsOpenedApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CampaignFormsSubmittedApi = new CampaignFormsSubmittedApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CampaignLinksClickedApi = new CampaignLinksClickedApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CampaignStatusesApi = new CampaignStatusesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CampaignSubTypesApi = new CampaignSubTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CampaignTypesApi = new CampaignTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CampaignsApi = new CampaignsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CatalogComponentsApi = new CatalogComponentsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CatalogsItemApi = new CatalogsItemApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CategoriesApi = new CategoriesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CertificationsApi = new CertificationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CodesApi = new CodesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CompaniesApi = new CompaniesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CompanyCustomNotesApi = new CompanyCustomNotesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CompanyManagementSummaryReportsApi = new CompanyManagementSummaryReportsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CompanyNotesApi = new CompanyNotesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CompanyNoteTypesApi = new CompanyNoteTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CompanySitesApi = new CompanySitesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CompanyStatusesApi = new CompanyStatusesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CompanyTeamsApi = new CompanyTeamsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CompanyTypesApi = new CompanyTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ConfigurationStatusesApi = new ConfigurationStatusesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ConfigurationTypeQuestionsApi = new ConfigurationTypeQuestionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ConfigurationTypesApi = new ConfigurationTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ContactsApi = new ContactsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.CurrenciesApi = new CurrenciesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ConfigurationsApi = new ConfigurationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ContactNotesApi = new ContactNotesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ContactTypesApi = new ContactTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ContactTracksApi = new ContactTracksApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ContactDepartmentsApi = new ContactDepartmentsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ContactRelationshipsApi = new ContactRelationshipsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ContactCommunicationsApi = new ContactCommunicationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ConnectWiseHostedSetupsApi = new ConnectWiseHostedSetupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.DocumentsApi = new DocumentsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ExpenseEntriesApi = new ExpenseEntriesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ExpenseTypesApi = new ExpenseTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.GroupCompaniesApi = new GroupCompaniesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.GroupsApi = new GroupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.GroupContactsApi = new GroupContactsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.InfoApi = new InfoApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.InOutBoardsApi = new InOutBoardsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.InOutTypesApi = new InOutTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.InvoicesApi = new InvoicesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.InvoicePaymentsApi = new InvoicePaymentsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.KnowledgeBaseArticlesApi = new KnowledgeBaseArticlesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.LinksApi = new LinksApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.LocationsApi = new LocationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.MembersApi = new MembersApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.MemberTypesApi = new MemberTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ManufacturersApi = new ManufacturersApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ManagementBackupsApi = new ManagementBackupsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.MarketDescriptionsApi = new MarketDescriptionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.MenuEntriesApi = new MenuEntriesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OpportunitiesApi = new OpportunitiesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OrdersApi = new OrdersApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OrderStatusesApi = new OrderStatusesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OpportunityNotesApi = new OpportunityNotesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OpportunityTeamsApi = new OpportunityTeamsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OpportunityTypesApi = new OpportunityTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OpportunityRatingsApi = new OpportunityRatingsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OpportunityContactsApi = new OpportunityContactsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OpportunityStatusesApi = new OpportunityStatusesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OpportunityStagesApi = new OpportunityStagesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OpportunityForecastsApi = new OpportunityForecastsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.OwnershipTypesApi = new OwnershipTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PricingBreaksApi = new PricingBreaksApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ProjectsApi = new ProjectsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PrioritiesApi = new PrioritiesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ProductsItemApi = new ProductsItemApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ProductTypesApi = new ProductTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ProjectNotesApi = new ProjectNotesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ProjectPhasesApi = new ProjectPhasesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PricingDetailsApi = new PricingDetailsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PurchaseOrdersApi = new PurchaseOrdersApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ProjectContactsApi = new ProjectContactsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PricingSchedulesApi = new PricingSchedulesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ProductComponentsApi = new ProductComponentsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ProjectsTeamMembersApi = new ProjectsTeamMembersApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PurchaseOrderLineItemsApi = new PurchaseOrderLineItemsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ProductPickingShippingDetailsApi = new ProductPickingShippingDetailsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ReportsApi = new ReportsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.RmaActionsApi = new RmaActionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.RmaDispositionsApi = new RmaDispositionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.RolesApi = new RolesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SalesProbabilitiesApi = new SalesProbabilitiesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SourcesApi = new SourcesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SurveysApi = new SurveysApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ScheduleTypesApi = new ScheduleTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SubCategoriesApi = new SubCategoriesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SurveyResultsApi = new SurveyResultsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ScheduleEntriesApi = new ScheduleEntriesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ShipmentMethodsApi = new ShipmentMethodsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SurveyQuestionsApi = new SurveyQuestionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ScheduleStatusesApi = new ScheduleStatusesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ScheduleStopwatchesApi = new ScheduleStopwatchesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ScheduleReminderTimesApi = new ScheduleReminderTimesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TaxCodeXRefsApi = new TaxCodeXRefsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TeamRolesApi = new TeamRolesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SkillsApi = new SkillsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.SkillCategoriesApi = new SkillCategoriesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TodayPageCategoriesApi = new TodayPageCategoriesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TicketsApi = new TicketsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TaxCodesApi = new TaxCodesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TicketNotesApi = new TicketNotesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TicketTasksApi = new TicketTasksApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TimeEntriesApi = new TimeEntriesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.TicketStopwatchesApi = new TicketStopwatchesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.UnitOfMeasureConversionsApi = new UnitOfMeasureConversionsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.UnitOfMeasuresApi = new UnitOfMeasuresApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.UserDefinedFieldsApi = new UserDefinedFieldsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ClosedInvoicesApi = new ClosedInvoicesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.EntityTypesApi = new EntityTypesApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.EPayConfigurationsApi = new EPayConfigurationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.LabsApi = new LabsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.MyMemberCertificationsApi = new MyMemberCertificationsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.MyMembersApi = new MyMembersApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.MySecuritysApi = new MySecuritysApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.PortalConfigurationPaymentProcessorsApi = new PortalConfigurationPaymentProcessorsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.ProcurementSettingsApi = new ProcurementSettingsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.WorkflowAttachmentsApi = new WorkflowAttachmentsApi(`https://${host}/v4_6_release/apis/3.0`);
-        this.AccountingBatchesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AccountingUnpostedExpensesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AccountingUnpostedProcurementsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AccountingUnpostedinvoicesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ActivitiesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ActivityStatusesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ActivityStopwatchesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ActivityTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AdjustmentDetailsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AdjustmentTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AdjustmentsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementSitesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementAdditionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementAdjustmentsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementBoardDefaultsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementWorkRoleExclusionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementWorkRolesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementWorkTypeExclusionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementWorkTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AuditTrailApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BatchApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BoardExcludedMembersApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BoardItemsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BoardStatusesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BoardSubTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BoardTeamsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BoardTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BoardsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CallbacksApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CampaignAuditsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CampaignEmailsOpenedApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CampaignFormsSubmittedApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CampaignLinksClickedApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CampaignStatusesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CampaignSubTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CampaignTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CampaignsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CatalogComponentsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CatalogsItemApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CategoriesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CodesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CompaniesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CompanyCustomNotesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CompanyManagementSummaryReportsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CompanyNotesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CompanySitesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CompanyStatusesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CompanyTeamsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CompanyTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ConfigurationStatusesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ConfigurationTypeQuestionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ConfigurationTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ContactsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CurrenciesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ConfigurationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ContactNotesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ContactTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ContactTracksApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ContactDepartmentsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ContactRelationshipsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ContactCommunicationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ConnectWiseHostedSetupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.DocumentsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ExpenseEntriesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ExpenseTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.GroupCompaniesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.GroupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.GroupContactsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.InfoApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.InvoicesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.InvoicePaymentsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.KnowledgeBaseArticlesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.LinksApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.LocationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.MembersApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ManufacturersApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.MenuEntriesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OpportunitiesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OrdersApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OrderStatusesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OpportunityNotesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OpportunityTeamsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OpportunityTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OpportunityRatingsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OpportunityContactsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OpportunityStatusesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OpportunityForecastsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PricingBreaksApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ProjectsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PrioritiesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ProductsItemApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ProductTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ProjectNotesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ProjectPhasesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PricingDetailsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PurchaseOrdersApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ProjectContactsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PricingSchedulesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ProductComponentsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ProjectsTeamMembersApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PurchaseOrderLineItemsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ProductPickingShippingDetailsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ReportsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SourcesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SurveysApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ScheduleTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SubCategoriesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SurveyResultsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ScheduleEntriesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ShipmentMethodsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SurveyQuestionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ScheduleStatusesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ScheduleStopwatchesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ScheduleReminderTimesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TaxCodeXRefsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TicketsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TaxCodesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TicketNotesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TicketTasksApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TimeEntriesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TicketStopwatchesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.UnitOfMeasureConversionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.UnitOfMeasuresApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.UserDefinedFieldsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        /* this.BoardSubtypeAssociationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        }; -- REMOVED */
-        this.CertificationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CompanyNoteTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.InOutBoardsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.InOutTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ManagementBackupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.MarketDescriptionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.MemberTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OpportunityStagesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OwnershipTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.RmaActionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.RmaDispositionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.RolesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SalesProbabilitiesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TeamRolesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SkillsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SkillCategoriesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TodayPageCategoriesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AccountingPackagesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AddressFormatsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementBatchSetupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementTypeBoardDefaultsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementTypeWorkRoleExclusionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementTypeWorkRolesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementTypeWorkTypeExclusionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AgreementTypeWorkTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.AuthAnvilsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BillingCyclesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BillingSetupRoutingsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BillingSetupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BillingStatusesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BillingTermsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BoardAutoAssignResourcesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BoardAutoTemplatesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BoardItemAssociationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BoardNotificationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BoardStatusNotificationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.BoardTypeSubTypeItemAssociationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CalendarsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ChargeCodeExpenseTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ChargeCodesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ClassificationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CommissionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CompanyGroupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CompanyPickerItemsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ConfigurationTypeQuestionValuesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ContactGroupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CorporateStructureLevelsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CorporateStructuresApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CountriesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CrmsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CustomReportParametersApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.CustomReportsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.DeliveryMethodsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.DepartmentLocationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.DepartmentsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.DocumentsSetupApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.EmailConnectorParsingRulesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.EmailConnectorParsingStylesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.EmailConnectorsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.EmailTokensApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ExpenseReportsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ExpenseTypeExternalIntegrationReferencesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.HolidayListsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.HolidaysApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ImapsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ImpactsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ImportsMassMaintenanceApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.IntegratorLoginsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.InvoiceEmailTemplatesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.InvoiceTemplatesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.InvoiceTemplateSetupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.KPICategoriesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.KPIsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.LdapConfigurationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.LegacyCampaignSubTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.LegacySubCategoriesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.LocationDepartmentsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.LocationWorkRolesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ManagedDevicesIntegrationCrossReferencesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ManagedDevicesIntegrationLoginsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ManagedDevicesIntegrationNotificationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ManagedDevicesIntegrationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ManagementExecuteManagedItSyncsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ManagementItSolutionAgreementInterfaceParametersApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ManagementItSolutionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ManagementLogsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ManagementNetworksSecurityApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ManagementReportNotificationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ManagementsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.MemberAccrualsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.MemberCertificationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.MemberDelegationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.MemberSkillsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.MenuEntryLocationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.NotificationRecipientsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OrderStatusesEmailTemplateApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OrderStatusNotificationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.OthersApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ParsingTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ParsingVariablesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PaymentTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PortalCalendarsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PortalConfigurationInvoiceSetupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PortalConfigurationOpportunitySetupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
+    private readonly hostURL: URL;
+    public constructor(publicKey: string, privateKey: string);
+    public constructor(publicKey: string, privateKey: string, hostInfo: string, companyID: string);
+    public constructor(publicKey: string, privateKey: string, hostInfo: string, companyID: string, codeBase: string);
+    public constructor(publicKey: string, privateKey: string, hostInfo: ManageCompanyInfo);
+    public constructor(publicKey: string, privateKey: string, hostInfo?: ManageCompanyInfo | string, companyID?: string, codeBase?: string) {
+        let host: string = 'api-na.myconnectwise.net';
+        let base: string = 'v2018_3';
+        let company: string = 'CW';
+        if (companyID && companyID.length > 0) {
+            let company = companyID;
         }
-        this.PortalConfigurationPasswordEmailSetupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PortalConfigurationProjectSetupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PortalConfigurationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PortalConfigurationServiceSetupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PortalReportsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PortalSecuritySettingsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PortalSecurityLevelsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ProjectSecurityRolesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ProjectSecurityRoleSettingsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ProjectStatusesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ProjectTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PurchaseOrderStatusEmailTemplatesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PurchaseOrderStatusesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PurchaseOrderStatusNotificationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ReportCardDetailsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ReportCardsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ReportingServicesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.RmaStatusEmailTemplatesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.RmaStatusesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.RmaStatusNotificationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SalesQuotasApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SalesTeamMembersApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SalesTeamsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ScheduleColorsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ScheduleDetailsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SecurityRolesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SecurityRoleSettingsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ServiceEmailTemplatesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ServiceLocationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ServicesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ServiceSignoffsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ServiceSurveyQuestionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ServiceSurveysApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ServiceTeamsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ServiceTemplatesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SetupScreensApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SeveritiesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SLAPrioritiesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SLAsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.StatesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.StatusExternalIntegrationReferencesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SurveyOptionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.SurveyQuestionValuesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TracksApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TaxCodeExpenseTypeExemptionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TaxCodeProductTypeExemptionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TaxCodeWorkRoleExemptionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TaxIntegrationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TeamMembersApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TicketSyncsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TimeAccrualDetailsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TimeAccrualsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TimeExpensesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TimePeriodsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TimePeriodSetupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TimeSheetsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TimeZonesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TimeZoneSetupsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.TrackActionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WarehouseBinsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WarehousesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WorkflowActionAutomateParametersApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WorkflowActionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WorkflowEventsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WorkflowNotifyTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WorkflowsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WorkflowTableTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WorkflowTriggerOptionsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WorkflowTriggersApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WorkRoleLocationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WorkRolesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WorkTypeExternalIntegrationReferencesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WorkTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ClosedInvoicesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.EntityTypesApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.EPayConfigurationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.LabsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.MyMemberCertificationsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.MyMembersApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.MySecuritysApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.PortalConfigurationPaymentProcessorsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.ProcurementSettingsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
-        this.WorkflowAttachmentsApi.defaultHeaders = {
-            'Authorization': `Basic ${this.authKey}`
-        };
+        if (codeBase && codeBase.length > 0) {
+            base = codeBase;
+        }
+        if (ApiClient.isManageCompanyInfo(hostInfo)) {
+            host = hostInfo.CompanyID;
+            base = hostInfo.Codebase;
+        } else if (typeof hostInfo === 'string') {
+            host = hostInfo;
+        }
+        this.hostURL = new URL('/apis/3.0', encodeURI(`https://${host}/${base}`).toString());
+        this.authKey = Buffer.from(`${company}+${publicKey}:${privateKey}`, 'base64').toString();
+        this.AccountingPackagesApi = new AccountingPackagesApi(this.hostURL.toString());
+        this.AddressFormatsApi = new AddressFormatsApi(this.hostURL.toString());
+        this.AgreementBatchSetupsApi = new AgreementBatchSetupsApi(this.hostURL.toString());
+        this.AgreementTypeBoardDefaultsApi = new AgreementTypeBoardDefaultsApi(this.hostURL.toString());
+        this.AgreementTypeWorkRoleExclusionsApi = new AgreementTypeWorkRoleExclusionsApi(this.hostURL.toString());
+        this.AgreementTypeWorkRolesApi = new AgreementTypeWorkRolesApi(this.hostURL.toString());
+        this.AgreementTypeWorkTypeExclusionsApi = new AgreementTypeWorkTypeExclusionsApi(this.hostURL.toString());
+        this.AgreementTypeWorkTypesApi = new AgreementTypeWorkTypesApi(this.hostURL.toString());
+        this.AuthAnvilsApi = new AuthAnvilsApi(this.hostURL.toString());
+        this.BillingCyclesApi = new BillingCyclesApi(this.hostURL.toString());
+        this.BillingSetupRoutingsApi = new BillingSetupRoutingsApi(this.hostURL.toString());
+        this.BillingSetupsApi = new BillingSetupsApi(this.hostURL.toString());
+        this.BillingStatusesApi = new BillingStatusesApi(this.hostURL.toString());
+        this.BillingTermsApi = new BillingTermsApi(this.hostURL.toString());
+        this.BoardAutoAssignResourcesApi = new BoardAutoAssignResourcesApi(this.hostURL.toString());
+        this.BoardAutoTemplatesApi = new BoardAutoTemplatesApi(this.hostURL.toString());
+        this.BoardItemAssociationsApi = new BoardItemAssociationsApi(this.hostURL.toString());
+        this.BoardNotificationsApi = new BoardNotificationsApi(this.hostURL.toString());
+        this.BoardStatusNotificationsApi = new BoardStatusNotificationsApi(this.hostURL.toString());
+        this.BoardTypeSubTypeItemAssociationsApi = new BoardTypeSubTypeItemAssociationsApi(this.hostURL.toString());
+        this.CalendarsApi = new CalendarsApi(this.hostURL.toString());
+        this.ChargeCodeExpenseTypesApi = new ChargeCodeExpenseTypesApi(this.hostURL.toString());
+        this.ChargeCodesApi = new ChargeCodesApi(this.hostURL.toString());
+        this.ClassificationsApi = new ClassificationsApi(this.hostURL.toString());
+        this.CommissionsApi = new CommissionsApi(this.hostURL.toString());
+        this.CompanyGroupsApi = new CompanyGroupsApi(this.hostURL.toString());
+        this.CompanyPickerItemsApi = new CompanyPickerItemsApi(this.hostURL.toString());
+        this.ConfigurationTypeQuestionValuesApi = new ConfigurationTypeQuestionValuesApi(this.hostURL.toString());
+        this.ContactGroupsApi = new ContactGroupsApi(this.hostURL.toString());
+        this.CorporateStructureLevelsApi = new CorporateStructureLevelsApi(this.hostURL.toString());
+        this.CorporateStructuresApi = new CorporateStructuresApi(this.hostURL.toString());
+        this.CountriesApi = new CountriesApi(this.hostURL.toString());
+        this.CrmsApi = new CrmsApi(this.hostURL.toString());
+        this.CustomReportParametersApi = new CustomReportParametersApi(this.hostURL.toString());
+        this.CustomReportsApi = new CustomReportsApi(this.hostURL.toString());
+        this.DeliveryMethodsApi = new DeliveryMethodsApi(this.hostURL.toString());
+        this.DepartmentLocationsApi = new DepartmentLocationsApi(this.hostURL.toString());
+        this.DepartmentsApi = new DepartmentsApi(this.hostURL.toString());
+        this.DocumentsSetupApi = new DocumentsSetupApi(this.hostURL.toString());
+        this.EmailConnectorParsingRulesApi = new EmailConnectorParsingRulesApi(this.hostURL.toString());
+        this.EmailConnectorParsingStylesApi = new EmailConnectorParsingStylesApi(this.hostURL.toString());
+        this.EmailConnectorsApi = new EmailConnectorsApi(this.hostURL.toString());
+        this.EmailTokensApi = new EmailTokensApi(this.hostURL.toString());
+        this.ExpenseReportsApi = new ExpenseReportsApi(this.hostURL.toString());
+        this.ExpenseTypeExternalIntegrationReferencesApi = new ExpenseTypeExternalIntegrationReferencesApi(this.hostURL.toString());
+        this.HolidayListsApi = new HolidayListsApi(this.hostURL.toString());
+        this.HolidaysApi = new HolidaysApi(this.hostURL.toString());
+        this.ImapsApi = new ImapsApi(this.hostURL.toString());
+        this.ImpactsApi = new ImpactsApi(this.hostURL.toString());
+        this.ImportsMassMaintenanceApi = new ImportsMassMaintenanceApi(this.hostURL.toString());
+        this.IntegratorLoginsApi = new IntegratorLoginsApi(this.hostURL.toString());
+        this.InvoiceEmailTemplatesApi = new InvoiceEmailTemplatesApi(this.hostURL.toString());
+        this.InvoiceTemplatesApi = new InvoiceTemplatesApi(this.hostURL.toString());
+        this.InvoiceTemplateSetupsApi = new InvoiceTemplateSetupsApi(this.hostURL.toString());
+        this.KPICategoriesApi = new KPICategoriesApi(this.hostURL.toString());
+        this.KPIsApi = new KPIsApi(this.hostURL.toString());
+        this.LdapConfigurationsApi = new LdapConfigurationsApi(this.hostURL.toString());
+        this.LegacyCampaignSubTypesApi = new LegacyCampaignSubTypesApi(this.hostURL.toString());
+        this.LegacySubCategoriesApi = new LegacySubCategoriesApi(this.hostURL.toString());
+        this.LocationDepartmentsApi = new LocationDepartmentsApi(this.hostURL.toString());
+        this.LocationWorkRolesApi = new LocationWorkRolesApi(this.hostURL.toString());
+        this.ManagedDevicesIntegrationCrossReferencesApi = new ManagedDevicesIntegrationCrossReferencesApi(this.hostURL.toString());
+        this.ManagedDevicesIntegrationLoginsApi = new ManagedDevicesIntegrationLoginsApi(this.hostURL.toString());
+        this.ManagedDevicesIntegrationNotificationsApi = new ManagedDevicesIntegrationNotificationsApi(this.hostURL.toString());
+        this.ManagedDevicesIntegrationsApi = new ManagedDevicesIntegrationsApi(this.hostURL.toString());
+        this.ManagementExecuteManagedItSyncsApi = new ManagementExecuteManagedItSyncsApi(this.hostURL.toString());
+        this.ManagementItSolutionAgreementInterfaceParametersApi = new ManagementItSolutionAgreementInterfaceParametersApi(this.hostURL.toString());
+        this.ManagementItSolutionsApi = new ManagementItSolutionsApi(this.hostURL.toString());
+        this.ManagementLogsApi = new ManagementLogsApi(this.hostURL.toString());
+        this.ManagementNetworksSecurityApi = new ManagementNetworksSecurityApi(this.hostURL.toString());
+        this.ManagementReportNotificationsApi = new ManagementReportNotificationsApi(this.hostURL.toString());
+        this.ManagementsApi = new ManagementsApi(this.hostURL.toString());
+        this.MemberAccrualsApi = new MemberAccrualsApi(this.hostURL.toString());
+        this.MemberCertificationsApi = new MemberCertificationsApi(this.hostURL.toString());
+        this.MemberDelegationsApi = new MemberDelegationsApi(this.hostURL.toString());
+        this.MemberSkillsApi = new MemberSkillsApi(this.hostURL.toString());
+        this.MenuEntryLocationsApi = new MenuEntryLocationsApi(this.hostURL.toString());
+        this.NotificationRecipientsApi = new NotificationRecipientsApi(this.hostURL.toString());
+        this.OrderStatusesEmailTemplateApi = new OrderStatusesEmailTemplateApi(this.hostURL.toString());
+        this.OrderStatusNotificationsApi = new OrderStatusNotificationsApi(this.hostURL.toString());
+        this.OthersApi = new OthersApi(this.hostURL.toString());
+        this.ParsingTypesApi = new ParsingTypesApi(this.hostURL.toString());
+        this.ParsingVariablesApi = new ParsingVariablesApi(this.hostURL.toString());
+        this.PaymentTypesApi = new PaymentTypesApi(this.hostURL.toString());
+        this.PortalCalendarsApi = new PortalCalendarsApi(this.hostURL.toString());
+        this.PortalConfigurationInvoiceSetupsApi = new PortalConfigurationInvoiceSetupsApi(this.hostURL.toString());
+        this.PortalConfigurationOpportunitySetupsApi = new PortalConfigurationOpportunitySetupsApi(this.hostURL.toString());
+        this.PortalConfigurationPasswordEmailSetupsApi = new PortalConfigurationPasswordEmailSetupsApi(this.hostURL.toString());
+        this.PortalConfigurationProjectSetupsApi = new PortalConfigurationProjectSetupsApi(this.hostURL.toString());
+        this.PortalConfigurationsApi = new PortalConfigurationsApi(this.hostURL.toString());
+        this.PortalConfigurationServiceSetupsApi = new PortalConfigurationServiceSetupsApi(this.hostURL.toString());
+        this.PortalReportsApi = new PortalReportsApi(this.hostURL.toString());
+        this.PortalSecuritySettingsApi = new PortalSecuritySettingsApi(this.hostURL.toString());
+        this.PortalSecurityLevelsApi = new PortalSecurityLevelsApi(this.hostURL.toString());
+        this.ProjectSecurityRolesApi = new ProjectSecurityRolesApi(this.hostURL.toString());
+        this.ProjectSecurityRoleSettingsApi = new ProjectSecurityRoleSettingsApi(this.hostURL.toString());
+        this.ProjectStatusesApi = new ProjectStatusesApi(this.hostURL.toString());
+        this.ProjectTypesApi = new ProjectTypesApi(this.hostURL.toString());
+        this.PurchaseOrderStatusEmailTemplatesApi = new PurchaseOrderStatusEmailTemplatesApi(this.hostURL.toString());
+        this.PurchaseOrderStatusesApi = new PurchaseOrderStatusesApi(this.hostURL.toString());
+        this.PurchaseOrderStatusNotificationsApi = new PurchaseOrderStatusNotificationsApi(this.hostURL.toString());
+        this.ReportCardDetailsApi = new ReportCardDetailsApi(this.hostURL.toString());
+        this.ReportCardsApi = new ReportCardsApi(this.hostURL.toString());
+        this.ReportingServicesApi = new ReportingServicesApi(this.hostURL.toString());
+        this.RmaStatusEmailTemplatesApi = new RmaStatusEmailTemplatesApi(this.hostURL.toString());
+        this.RmaStatusesApi = new RmaStatusesApi(this.hostURL.toString());
+        this.RmaStatusNotificationsApi = new RmaStatusNotificationsApi(this.hostURL.toString());
+        this.SalesQuotasApi = new SalesQuotasApi(this.hostURL.toString());
+        this.SalesTeamMembersApi = new SalesTeamMembersApi(this.hostURL.toString());
+        this.SalesTeamsApi = new SalesTeamsApi(this.hostURL.toString());
+        this.ScheduleColorsApi = new ScheduleColorsApi(this.hostURL.toString());
+        this.ScheduleDetailsApi = new ScheduleDetailsApi(this.hostURL.toString());
+        this.SecurityRolesApi = new SecurityRolesApi(this.hostURL.toString());
+        this.SecurityRoleSettingsApi = new SecurityRoleSettingsApi(this.hostURL.toString());
+        this.ServiceEmailTemplatesApi = new ServiceEmailTemplatesApi(this.hostURL.toString());
+        this.ServiceLocationsApi = new ServiceLocationsApi(this.hostURL.toString());
+        this.ServicesApi = new ServicesApi(this.hostURL.toString());
+        this.ServiceSignoffsApi = new ServiceSignoffsApi(this.hostURL.toString());
+        this.ServiceSurveyQuestionsApi = new ServiceSurveyQuestionsApi(this.hostURL.toString());
+        this.ServiceSurveysApi = new ServiceSurveysApi(this.hostURL.toString());
+        this.ServiceTeamsApi = new ServiceTeamsApi(this.hostURL.toString());
+        this.ServiceTemplatesApi = new ServiceTemplatesApi(this.hostURL.toString());
+        this.SetupScreensApi = new SetupScreensApi(this.hostURL.toString());
+        this.SeveritiesApi = new SeveritiesApi(this.hostURL.toString());
+        this.SLAPrioritiesApi = new SLAPrioritiesApi(this.hostURL.toString());
+        this.SLAsApi = new SLAsApi(this.hostURL.toString());
+        this.StatesApi = new StatesApi(this.hostURL.toString());
+        this.StatusExternalIntegrationReferencesApi = new StatusExternalIntegrationReferencesApi(this.hostURL.toString());
+        this.SurveyOptionsApi = new SurveyOptionsApi(this.hostURL.toString());
+        this.SurveyQuestionValuesApi = new SurveyQuestionValuesApi(this.hostURL.toString());
+        this.TracksApi = new TracksApi(this.hostURL.toString());
+        this.TaxCodeExpenseTypeExemptionsApi = new TaxCodeExpenseTypeExemptionsApi(this.hostURL.toString());
+        this.TaxCodeProductTypeExemptionsApi = new TaxCodeProductTypeExemptionsApi(this.hostURL.toString());
+        this.TaxCodeWorkRoleExemptionsApi = new TaxCodeWorkRoleExemptionsApi(this.hostURL.toString());
+        this.TaxIntegrationsApi = new TaxIntegrationsApi(this.hostURL.toString());
+        this.TeamMembersApi = new TeamMembersApi(this.hostURL.toString());
+        this.TicketSyncsApi = new TicketSyncsApi(this.hostURL.toString());
+        this.TimeAccrualDetailsApi = new TimeAccrualDetailsApi(this.hostURL.toString());
+        this.TimeAccrualsApi = new TimeAccrualsApi(this.hostURL.toString());
+        this.TimeExpensesApi = new TimeExpensesApi(this.hostURL.toString());
+        this.TimePeriodsApi = new TimePeriodsApi(this.hostURL.toString());
+        this.TimePeriodSetupsApi = new TimePeriodSetupsApi(this.hostURL.toString());
+        this.TimeSheetsApi = new TimeSheetsApi(this.hostURL.toString());
+        this.TimeZonesApi = new TimeZonesApi(this.hostURL.toString());
+        this.TimeZoneSetupsApi = new TimeZoneSetupsApi(this.hostURL.toString());
+        this.TrackActionsApi = new TrackActionsApi(this.hostURL.toString());
+        this.WarehouseBinsApi = new WarehouseBinsApi(this.hostURL.toString());
+        this.WarehousesApi = new WarehousesApi(this.hostURL.toString());
+        this.WorkflowActionAutomateParametersApi = new WorkflowActionAutomateParametersApi(this.hostURL.toString());
+        this.WorkflowActionsApi = new WorkflowActionsApi(this.hostURL.toString());
+        this.WorkflowEventsApi = new WorkflowEventsApi(this.hostURL.toString());
+        this.WorkflowNotifyTypesApi = new WorkflowNotifyTypesApi(this.hostURL.toString());
+        this.WorkflowsApi = new WorkflowsApi(this.hostURL.toString());
+        this.WorkflowTableTypesApi = new WorkflowTableTypesApi(this.hostURL.toString());
+        this.WorkflowTriggerOptionsApi = new WorkflowTriggerOptionsApi(this.hostURL.toString());
+        this.WorkflowTriggersApi = new WorkflowTriggersApi(this.hostURL.toString());
+        this.WorkRoleLocationsApi = new WorkRoleLocationsApi(this.hostURL.toString());
+        this.WorkRolesApi = new WorkRolesApi(this.hostURL.toString());
+        this.WorkTypeExternalIntegrationReferencesApi = new WorkTypeExternalIntegrationReferencesApi(this.hostURL.toString());
+        this.WorkTypesApi = new WorkTypesApi(this.hostURL.toString());
+        this.AccountingBatchesApi = new AccountingBatchesApi(this.hostURL.toString());
+        this.AccountingUnpostedExpensesApi = new AccountingUnpostedExpensesApi(this.hostURL.toString());
+        this.AccountingUnpostedProcurementsApi = new AccountingUnpostedProcurementsApi(this.hostURL.toString());
+        this.AccountingUnpostedinvoicesApi = new AccountingUnpostedinvoicesApi(this.hostURL.toString());
+        this.ActivitiesApi = new ActivitiesApi(this.hostURL.toString());
+        this.ActivityStatusesApi = new ActivityStatusesApi(this.hostURL.toString());
+        this.ActivityStopwatchesApi = new ActivityStopwatchesApi(this.hostURL.toString());
+        this.ActivityTypesApi = new ActivityTypesApi(this.hostURL.toString());
+        this.AdjustmentDetailsApi = new AdjustmentDetailsApi(this.hostURL.toString());
+        this.AdjustmentTypesApi = new AdjustmentTypesApi(this.hostURL.toString());
+        this.AdjustmentsApi = new AdjustmentsApi(this.hostURL.toString());
+        this.AgreementSitesApi = new AgreementSitesApi(this.hostURL.toString());
+        this.AgreementAdditionsApi = new AgreementAdditionsApi(this.hostURL.toString());
+        this.AgreementAdjustmentsApi = new AgreementAdjustmentsApi(this.hostURL.toString());
+        this.AgreementBoardDefaultsApi = new AgreementBoardDefaultsApi(this.hostURL.toString());
+        this.AgreementTypesApi = new AgreementTypesApi(this.hostURL.toString());
+        this.AgreementWorkRoleExclusionsApi = new AgreementWorkRoleExclusionsApi(this.hostURL.toString());
+        this.AgreementWorkRolesApi = new AgreementWorkRolesApi(this.hostURL.toString());
+        this.AgreementWorkTypeExclusionsApi = new AgreementWorkTypeExclusionsApi(this.hostURL.toString());
+        this.AgreementWorkTypesApi = new AgreementWorkTypesApi(this.hostURL.toString())
+        this.AgreementsApi = new AgreementsApi(this.hostURL.toString());
+        this.AuditTrailApi = new AuditTrailApi(this.hostURL.toString());
+        this.BatchApi = new BatchApi(this.hostURL.toString());
+        this.BoardExcludedMembersApi = new BoardExcludedMembersApi(this.hostURL.toString());
+        this.BoardItemsApi = new BoardItemsApi(this.hostURL.toString());
+        this.BoardStatusesApi = new BoardStatusesApi(this.hostURL.toString());
+        this.BoardSubTypesApi = new BoardSubTypesApi(this.hostURL.toString());
+        this.BoardTeamsApi = new BoardTeamsApi(this.hostURL.toString());
+        this.BoardTypesApi = new BoardTypesApi(this.hostURL.toString());
+        this.BoardsApi = new BoardsApi(this.hostURL.toString());
+        this.CallbacksApi = new CallbacksApi(this.hostURL.toString());
+        this.CampaignAuditsApi = new CampaignAuditsApi(this.hostURL.toString());
+        this.CampaignEmailsOpenedApi = new CampaignEmailsOpenedApi(this.hostURL.toString());
+        this.CampaignFormsSubmittedApi = new CampaignFormsSubmittedApi(this.hostURL.toString());
+        this.CampaignLinksClickedApi = new CampaignLinksClickedApi(this.hostURL.toString());
+        this.CampaignStatusesApi = new CampaignStatusesApi(this.hostURL.toString());
+        this.CampaignSubTypesApi = new CampaignSubTypesApi(this.hostURL.toString());
+        this.CampaignTypesApi = new CampaignTypesApi(this.hostURL.toString());
+        this.CampaignsApi = new CampaignsApi(this.hostURL.toString());
+        this.CatalogComponentsApi = new CatalogComponentsApi(this.hostURL.toString());
+        this.CatalogsItemApi = new CatalogsItemApi(this.hostURL.toString());
+        this.CategoriesApi = new CategoriesApi(this.hostURL.toString());
+        this.CertificationsApi = new CertificationsApi(this.hostURL.toString());
+        this.CodesApi = new CodesApi(this.hostURL.toString());
+        this.CompaniesApi = new CompaniesApi(this.hostURL.toString());
+        this.CompanyCustomNotesApi = new CompanyCustomNotesApi(this.hostURL.toString());
+        this.CompanyManagementSummaryReportsApi = new CompanyManagementSummaryReportsApi(this.hostURL.toString());
+        this.CompanyNotesApi = new CompanyNotesApi(this.hostURL.toString());
+        this.CompanyNoteTypesApi = new CompanyNoteTypesApi(this.hostURL.toString());
+        this.CompanySitesApi = new CompanySitesApi(this.hostURL.toString());
+        this.CompanyStatusesApi = new CompanyStatusesApi(this.hostURL.toString());
+        this.CompanyTeamsApi = new CompanyTeamsApi(this.hostURL.toString());
+        this.CompanyTypesApi = new CompanyTypesApi(this.hostURL.toString());
+        this.ConfigurationStatusesApi = new ConfigurationStatusesApi(this.hostURL.toString());
+        this.ConfigurationTypeQuestionsApi = new ConfigurationTypeQuestionsApi(this.hostURL.toString());
+        this.ConfigurationTypesApi = new ConfigurationTypesApi(this.hostURL.toString());
+        this.ContactsApi = new ContactsApi(this.hostURL.toString());
+        this.CurrenciesApi = new CurrenciesApi(this.hostURL.toString());
+        this.ConfigurationsApi = new ConfigurationsApi(this.hostURL.toString());
+        this.ContactNotesApi = new ContactNotesApi(this.hostURL.toString());
+        this.ContactTypesApi = new ContactTypesApi(this.hostURL.toString());
+        this.ContactTracksApi = new ContactTracksApi(this.hostURL.toString());
+        this.ContactDepartmentsApi = new ContactDepartmentsApi(this.hostURL.toString());
+        this.ContactRelationshipsApi = new ContactRelationshipsApi(this.hostURL.toString());
+        this.ContactCommunicationsApi = new ContactCommunicationsApi(this.hostURL.toString());
+        this.ConnectWiseHostedSetupsApi = new ConnectWiseHostedSetupsApi(this.hostURL.toString());
+        this.DocumentsApi = new DocumentsApi(this.hostURL.toString());
+        this.ExpenseEntriesApi = new ExpenseEntriesApi(this.hostURL.toString());
+        this.ExpenseTypesApi = new ExpenseTypesApi(this.hostURL.toString());
+        this.GroupCompaniesApi = new GroupCompaniesApi(this.hostURL.toString());
+        this.GroupsApi = new GroupsApi(this.hostURL.toString());
+        this.GroupContactsApi = new GroupContactsApi(this.hostURL.toString());
+        this.InfoApi = new InfoApi(this.hostURL.toString());
+        this.InOutBoardsApi = new InOutBoardsApi(this.hostURL.toString());
+        this.InOutTypesApi = new InOutTypesApi(this.hostURL.toString());
+        this.InvoicesApi = new InvoicesApi(this.hostURL.toString());
+        this.InvoicePaymentsApi = new InvoicePaymentsApi(this.hostURL.toString());
+        this.KnowledgeBaseArticlesApi = new KnowledgeBaseArticlesApi(this.hostURL.toString());
+        this.LinksApi = new LinksApi(this.hostURL.toString());
+        this.LocationsApi = new LocationsApi(this.hostURL.toString());
+        this.MembersApi = new MembersApi(this.hostURL.toString());
+        this.MemberTypesApi = new MemberTypesApi(this.hostURL.toString());
+        this.ManufacturersApi = new ManufacturersApi(this.hostURL.toString());
+        this.ManagementBackupsApi = new ManagementBackupsApi(this.hostURL.toString());
+        this.MarketDescriptionsApi = new MarketDescriptionsApi(this.hostURL.toString());
+        this.MenuEntriesApi = new MenuEntriesApi(this.hostURL.toString());
+        this.OpportunitiesApi = new OpportunitiesApi(this.hostURL.toString());
+        this.OrdersApi = new OrdersApi(this.hostURL.toString());
+        this.OrderStatusesApi = new OrderStatusesApi(this.hostURL.toString());
+        this.OpportunityNotesApi = new OpportunityNotesApi(this.hostURL.toString());
+        this.OpportunityTeamsApi = new OpportunityTeamsApi(this.hostURL.toString());
+        this.OpportunityTypesApi = new OpportunityTypesApi(this.hostURL.toString());
+        this.OpportunityRatingsApi = new OpportunityRatingsApi(this.hostURL.toString());
+        this.OpportunityContactsApi = new OpportunityContactsApi(this.hostURL.toString());
+        this.OpportunityStatusesApi = new OpportunityStatusesApi(this.hostURL.toString());
+        this.OpportunityStagesApi = new OpportunityStagesApi(this.hostURL.toString());
+        this.OpportunityForecastsApi = new OpportunityForecastsApi(this.hostURL.toString());
+        this.OwnershipTypesApi = new OwnershipTypesApi(this.hostURL.toString());
+        this.PricingBreaksApi = new PricingBreaksApi(this.hostURL.toString());
+        this.ProjectsApi = new ProjectsApi(this.hostURL.toString());
+        this.PrioritiesApi = new PrioritiesApi(this.hostURL.toString());
+        this.ProductsItemApi = new ProductsItemApi(this.hostURL.toString());
+        this.ProductTypesApi = new ProductTypesApi(this.hostURL.toString());
+        this.ProjectNotesApi = new ProjectNotesApi(this.hostURL.toString());
+        this.ProjectPhasesApi = new ProjectPhasesApi(this.hostURL.toString());
+        this.PricingDetailsApi = new PricingDetailsApi(this.hostURL.toString());
+        this.PurchaseOrdersApi = new PurchaseOrdersApi(this.hostURL.toString());
+        this.ProjectContactsApi = new ProjectContactsApi(this.hostURL.toString());
+        this.PricingSchedulesApi = new PricingSchedulesApi(this.hostURL.toString());
+        this.ProductComponentsApi = new ProductComponentsApi(this.hostURL.toString());
+        this.ProjectsTeamMembersApi = new ProjectsTeamMembersApi(this.hostURL.toString());
+        this.PurchaseOrderLineItemsApi = new PurchaseOrderLineItemsApi(this.hostURL.toString());
+        this.ProductPickingShippingDetailsApi = new ProductPickingShippingDetailsApi(this.hostURL.toString());
+        this.ReportsApi = new ReportsApi(this.hostURL.toString());
+        this.RmaActionsApi = new RmaActionsApi(this.hostURL.toString());
+        this.RmaDispositionsApi = new RmaDispositionsApi(this.hostURL.toString());
+        this.RolesApi = new RolesApi(this.hostURL.toString());
+        this.SalesProbabilitiesApi = new SalesProbabilitiesApi(this.hostURL.toString());
+        this.SourcesApi = new SourcesApi(this.hostURL.toString());
+        this.SurveysApi = new SurveysApi(this.hostURL.toString());
+        this.ScheduleTypesApi = new ScheduleTypesApi(this.hostURL.toString());
+        this.SubCategoriesApi = new SubCategoriesApi(this.hostURL.toString());
+        this.SurveyResultsApi = new SurveyResultsApi(this.hostURL.toString());
+        this.ScheduleEntriesApi = new ScheduleEntriesApi(this.hostURL.toString());
+        this.ShipmentMethodsApi = new ShipmentMethodsApi(this.hostURL.toString());
+        this.SurveyQuestionsApi = new SurveyQuestionsApi(this.hostURL.toString());
+        this.ScheduleStatusesApi = new ScheduleStatusesApi(this.hostURL.toString());
+        this.ScheduleStopwatchesApi = new ScheduleStopwatchesApi(this.hostURL.toString());
+        this.ScheduleReminderTimesApi = new ScheduleReminderTimesApi(this.hostURL.toString());
+        this.TaxCodeXRefsApi = new TaxCodeXRefsApi(this.hostURL.toString());
+        this.TeamRolesApi = new TeamRolesApi(this.hostURL.toString());
+        this.SkillsApi = new SkillsApi(this.hostURL.toString());
+        this.SkillCategoriesApi = new SkillCategoriesApi(this.hostURL.toString());
+        this.TodayPageCategoriesApi = new TodayPageCategoriesApi(this.hostURL.toString());
+        this.TicketsApi = new TicketsApi(this.hostURL.toString());
+        this.TaxCodesApi = new TaxCodesApi(this.hostURL.toString());
+        this.TicketNotesApi = new TicketNotesApi(this.hostURL.toString());
+        this.TicketTasksApi = new TicketTasksApi(this.hostURL.toString());
+        this.TimeEntriesApi = new TimeEntriesApi(this.hostURL.toString());
+        this.TicketStopwatchesApi = new TicketStopwatchesApi(this.hostURL.toString());
+        this.UnitOfMeasureConversionsApi = new UnitOfMeasureConversionsApi(this.hostURL.toString());
+        this.UnitOfMeasuresApi = new UnitOfMeasuresApi(this.hostURL.toString());
+        this.UserDefinedFieldsApi = new UserDefinedFieldsApi(this.hostURL.toString());
+        this.ClosedInvoicesApi = new ClosedInvoicesApi(this.hostURL.toString());
+        this.EntityTypesApi = new EntityTypesApi(this.hostURL.toString());
+        this.EPayConfigurationsApi = new EPayConfigurationsApi(this.hostURL.toString());
+        this.LabsApi = new LabsApi(this.hostURL.toString());
+        this.MyMemberCertificationsApi = new MyMemberCertificationsApi(this.hostURL.toString());
+        this.MyMembersApi = new MyMembersApi(this.hostURL.toString());
+        this.MySecuritysApi = new MySecuritysApi(this.hostURL.toString());
+        this.PortalConfigurationPaymentProcessorsApi = new PortalConfigurationPaymentProcessorsApi(this.hostURL.toString());
+        this.ProcurementSettingsApi = new ProcurementSettingsApi(this.hostURL.toString());
+        this.WorkflowAttachmentsApi = new WorkflowAttachmentsApi(this.hostURL.toString());
+        Object.getOwnPropertyNames(this).filter((property: string): boolean => property.toLowerCase().includes('api')).forEach((property: string): void => {
+            // @ts-ignore
+            Reflect.defineProperty(this[property], 'defaultHeaders', {
+                value: { 'Authorization': `Basic ${this.authKey}` }
+            });
+        });
+    };
+    private static isManageCompanyInfo(hostInfo: string | ManageCompanyInfo): hostInfo is ManageCompanyInfo {
+        return (<ManageCompanyInfo>hostInfo).CompanyID !== undefined && (<ManageCompanyInfo>hostInfo).Codebase !== undefined;
+    };
+
+    public static async getManageCompanyInfo(host: string, companyID: string): Promise<ManageCompanyInfo> {
+        try {
+            const address: URL = new URL(encodeURIComponent(`/login/companyinfo/${companyID}`), encodeURIComponent(`https://${host}/`));
+            const response: Response = await fetch(encodeURI(address.toString()), { method: 'GET' });
+            if (response.ok) {
+                const info: ManageCompanyInfo = await response.json();
+                return Promise.resolve(info);
+            }
+        } catch (error) {
+            return Promise.reject<ManageCompanyInfo>(error);
+        }
     };
 };
 

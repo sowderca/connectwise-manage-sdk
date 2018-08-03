@@ -645,7 +645,7 @@ export class ApiClient {
         let base: string = 'v2018_3';
         let company: string = 'CW';
         if (companyID && companyID.length > 0) {
-            let company = companyID;
+            company = companyID;
         }
         if (codeBase && codeBase.length > 0) {
             base = codeBase;
@@ -656,8 +656,8 @@ export class ApiClient {
         } else if (typeof hostInfo === 'string') {
             host = hostInfo;
         }
-        this.hostURL = new URL('/apis/3.0', encodeURI(`https://${host}/${base}`).toString());
-        this.authKey = Buffer.from(`${company}+${publicKey}:${privateKey}`, 'base64').toString();
+        this.hostURL = new URL(`${base}/apis/3.0`, encodeURI(`https://${host}/`).toString());
+        this.authKey = Buffer.from(`${company}+${publicKey}:${privateKey}`).toString('base64');
         this.AccountingPackagesApi = new AccountingPackagesApi(this.hostURL.toString());
         this.AddressFormatsApi = new AddressFormatsApi(this.hostURL.toString());
         this.AgreementBatchSetupsApi = new AgreementBatchSetupsApi(this.hostURL.toString());

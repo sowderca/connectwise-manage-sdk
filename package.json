@@ -38,8 +38,8 @@
   },
   "devDependencies": {
     "@types/isomorphic-fetch": "0.0.34",
-    "@types/node": "^10.1.2",
-    "typedoc": "^0.11.1",
-    "typescript": "^2.8.3"
+    "@types/node": "^10.14.15",
+    "typedoc": "^0.15.0",
+    "typescript": "^2.9.2"
   }
 }

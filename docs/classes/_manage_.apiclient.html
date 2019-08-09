@@ -404,6 +404,15 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_manage_.apiclient.html#workflowtriggersapi" class="tsd-kind-icon">Workflow<wbr>Triggers<wbr>Api</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_manage_.apiclient.html#workflowsapi" class="tsd-kind-icon">Workflows<wbr>Api</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_manage_.apiclient.html#authkey" class="tsd-kind-icon">auth<wbr>Key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_manage_.apiclient.html#clientid" class="tsd-kind-icon">clientID</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_manage_.apiclient.html#hosturl" class="tsd-kind-icon">hostURL</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_manage_.apiclient.html#getmanagecompanyinfo" class="tsd-kind-icon">get<wbr>Manage<wbr>Company<wbr>Info</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="_manage_.apiclient.html#ismanagecompanyinfo" class="tsd-kind-icon">is<wbr>Manage<wbr>Company<wbr>Info</a></li>
 							</ul>
 						</section>
 					</div>
@@ -415,28 +424,124 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Api<wbr>Client<span class="tsd-signature-symbol">(</span>host<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, companyId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, publicKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, privateKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_manage_.apiclient.html" class="tsd-signature-type">ApiClient</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Api<wbr>Client<span class="tsd-signature-symbol">(</span>publicKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, privateKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_manage_.apiclient.html" class="tsd-signature-type">ApiClient</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Api<wbr>Client<span class="tsd-signature-symbol">(</span>publicKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, privateKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, hostInfo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, companyID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_manage_.apiclient.html" class="tsd-signature-type">ApiClient</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Api<wbr>Client<span class="tsd-signature-symbol">(</span>publicKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, privateKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, hostInfo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, companyID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, codeBase<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_manage_.apiclient.html" class="tsd-signature-type">ApiClient</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Api<wbr>Client<span class="tsd-signature-symbol">(</span>publicKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, privateKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, hostInfo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, companyID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, codeBase<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, clientID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_manage_.apiclient.html" class="tsd-signature-type">ApiClient</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Api<wbr>Client<span class="tsd-signature-symbol">(</span>publicKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, privateKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, hostInfo<span class="tsd-signature-symbol">: </span><a href="../interfaces/_lib_info_.managecompanyinfo.html" class="tsd-signature-type">ManageCompanyInfo</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_manage_.apiclient.html" class="tsd-signature-type">ApiClient</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in manage.ts:634</li>
+									<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L639">manage.ts:639</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>host: <span class="tsd-signature-type">string</span></h5>
+									<h5>publicKey: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>companyId: <span class="tsd-signature-type">string</span></h5>
+									<h5>privateKey: <span class="tsd-signature-type">string</span></h5>
 								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_manage_.apiclient.html" class="tsd-signature-type">ApiClient</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L640">manage.ts:640</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
 								<li>
 									<h5>publicKey: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
 									<h5>privateKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>hostInfo: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>companyID: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_manage_.apiclient.html" class="tsd-signature-type">ApiClient</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L641">manage.ts:641</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>publicKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>privateKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>hostInfo: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>companyID: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>codeBase: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_manage_.apiclient.html" class="tsd-signature-type">ApiClient</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L642">manage.ts:642</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>publicKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>privateKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>hostInfo: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>companyID: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>codeBase: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>clientID: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_manage_.apiclient.html" class="tsd-signature-type">ApiClient</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L643">manage.ts:643</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>publicKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>privateKey: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>hostInfo: <a href="../interfaces/_lib_info_.managecompanyinfo.html" class="tsd-signature-type">ManageCompanyInfo</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_manage_.apiclient.html" class="tsd-signature-type">ApiClient</a></h4>
@@ -452,7 +557,7 @@
 					<div class="tsd-signature tsd-kind-icon">Accounting<wbr>Batches<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.accountingbatchesapi.html" class="tsd-signature-type">AccountingBatchesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:481</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L484">manage.ts:484</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -462,7 +567,7 @@
 					<div class="tsd-signature tsd-kind-icon">Accounting<wbr>Packages<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.accountingpackagesapi.html" class="tsd-signature-type">AccountingPackagesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:321</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L324">manage.ts:324</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -472,7 +577,7 @@
 					<div class="tsd-signature tsd-kind-icon">Accounting<wbr>Unposted<wbr>Expenses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.accountingunpostedexpensesapi.html" class="tsd-signature-type">AccountingUnpostedExpensesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:482</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L485">manage.ts:485</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -482,7 +587,7 @@
 					<div class="tsd-signature tsd-kind-icon">Accounting<wbr>Unposted<wbr>Procurements<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.accountingunpostedprocurementsapi.html" class="tsd-signature-type">AccountingUnpostedProcurementsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:483</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L486">manage.ts:486</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -492,7 +597,7 @@
 					<div class="tsd-signature tsd-kind-icon">Accounting<wbr>Unpostedinvoices<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.accountingunpostedinvoicesapi.html" class="tsd-signature-type">AccountingUnpostedinvoicesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:484</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L487">manage.ts:487</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -502,7 +607,7 @@
 					<div class="tsd-signature tsd-kind-icon">Activities<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.activitiesapi.html" class="tsd-signature-type">ActivitiesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:485</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L488">manage.ts:488</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -512,7 +617,7 @@
 					<div class="tsd-signature tsd-kind-icon">Activity<wbr>Statuses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.activitystatusesapi.html" class="tsd-signature-type">ActivityStatusesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:486</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L489">manage.ts:489</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -522,7 +627,7 @@
 					<div class="tsd-signature tsd-kind-icon">Activity<wbr>Stopwatches<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.activitystopwatchesapi.html" class="tsd-signature-type">ActivityStopwatchesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:487</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L490">manage.ts:490</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -532,7 +637,7 @@
 					<div class="tsd-signature tsd-kind-icon">Activity<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.activitytypesapi.html" class="tsd-signature-type">ActivityTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:488</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L491">manage.ts:491</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -542,7 +647,7 @@
 					<div class="tsd-signature tsd-kind-icon">Address<wbr>Formats<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.addressformatsapi.html" class="tsd-signature-type">AddressFormatsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:322</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L325">manage.ts:325</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -552,7 +657,7 @@
 					<div class="tsd-signature tsd-kind-icon">Adjustment<wbr>Details<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.adjustmentdetailsapi.html" class="tsd-signature-type">AdjustmentDetailsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:489</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L492">manage.ts:492</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -562,7 +667,7 @@
 					<div class="tsd-signature tsd-kind-icon">Adjustment<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.adjustmenttypesapi.html" class="tsd-signature-type">AdjustmentTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:490</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L493">manage.ts:493</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -572,7 +677,7 @@
 					<div class="tsd-signature tsd-kind-icon">Adjustments<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.adjustmentsapi.html" class="tsd-signature-type">AdjustmentsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:491</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L494">manage.ts:494</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -582,7 +687,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Additions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementadditionsapi.html" class="tsd-signature-type">AgreementAdditionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:493</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L496">manage.ts:496</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -592,7 +697,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Adjustments<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementadjustmentsapi.html" class="tsd-signature-type">AgreementAdjustmentsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:494</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L497">manage.ts:497</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -602,7 +707,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Batch<wbr>Setups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementbatchsetupsapi.html" class="tsd-signature-type">AgreementBatchSetupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:323</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L326">manage.ts:326</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -612,7 +717,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Board<wbr>Defaults<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementboarddefaultsapi.html" class="tsd-signature-type">AgreementBoardDefaultsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:495</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L498">manage.ts:498</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -622,7 +727,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Sites<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementsitesapi.html" class="tsd-signature-type">AgreementSitesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:492</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L495">manage.ts:495</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -632,7 +737,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Type<wbr>Board<wbr>Defaults<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementtypeboarddefaultsapi.html" class="tsd-signature-type">AgreementTypeBoardDefaultsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:324</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L327">manage.ts:327</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -642,7 +747,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Type<wbr>Work<wbr>Role<wbr>Exclusions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementtypeworkroleexclusionsapi.html" class="tsd-signature-type">AgreementTypeWorkRoleExclusionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:325</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L328">manage.ts:328</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -652,7 +757,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Type<wbr>Work<wbr>Roles<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementtypeworkrolesapi.html" class="tsd-signature-type">AgreementTypeWorkRolesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:326</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L329">manage.ts:329</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -662,7 +767,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Type<wbr>Work<wbr>Type<wbr>Exclusions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementtypeworktypeexclusionsapi.html" class="tsd-signature-type">AgreementTypeWorkTypeExclusionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:327</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L330">manage.ts:330</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -672,7 +777,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Type<wbr>Work<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementtypeworktypesapi.html" class="tsd-signature-type">AgreementTypeWorkTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:328</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L331">manage.ts:331</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -682,7 +787,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementtypesapi.html" class="tsd-signature-type">AgreementTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:496</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L499">manage.ts:499</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -692,7 +797,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Work<wbr>Role<wbr>Exclusions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementworkroleexclusionsapi.html" class="tsd-signature-type">AgreementWorkRoleExclusionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:497</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L500">manage.ts:500</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -702,7 +807,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Work<wbr>Roles<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementworkrolesapi.html" class="tsd-signature-type">AgreementWorkRolesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:498</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L501">manage.ts:501</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -712,7 +817,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Work<wbr>Type<wbr>Exclusions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementworktypeexclusionsapi.html" class="tsd-signature-type">AgreementWorkTypeExclusionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:499</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L502">manage.ts:502</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -722,7 +827,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreement<wbr>Work<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementworktypesapi.html" class="tsd-signature-type">AgreementWorkTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:500</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L503">manage.ts:503</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -732,7 +837,7 @@
 					<div class="tsd-signature tsd-kind-icon">Agreements<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.agreementsapi.html" class="tsd-signature-type">AgreementsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:501</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L504">manage.ts:504</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -742,7 +847,7 @@
 					<div class="tsd-signature tsd-kind-icon">Audit<wbr>Trail<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.audittrailapi.html" class="tsd-signature-type">AuditTrailApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:502</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L505">manage.ts:505</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -752,7 +857,7 @@
 					<div class="tsd-signature tsd-kind-icon">Auth<wbr>Anvils<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.authanvilsapi.html" class="tsd-signature-type">AuthAnvilsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:329</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L332">manage.ts:332</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -762,7 +867,7 @@
 					<div class="tsd-signature tsd-kind-icon">Batch<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.batchapi.html" class="tsd-signature-type">BatchApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:503</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L506">manage.ts:506</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -772,7 +877,7 @@
 					<div class="tsd-signature tsd-kind-icon">Billing<wbr>Cycles<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.billingcyclesapi.html" class="tsd-signature-type">BillingCyclesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:330</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L333">manage.ts:333</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -782,7 +887,7 @@
 					<div class="tsd-signature tsd-kind-icon">Billing<wbr>Setup<wbr>Routings<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.billingsetuproutingsapi.html" class="tsd-signature-type">BillingSetupRoutingsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:331</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L334">manage.ts:334</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -792,7 +897,7 @@
 					<div class="tsd-signature tsd-kind-icon">Billing<wbr>Setups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.billingsetupsapi.html" class="tsd-signature-type">BillingSetupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:332</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L335">manage.ts:335</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -802,7 +907,7 @@
 					<div class="tsd-signature tsd-kind-icon">Billing<wbr>Statuses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.billingstatusesapi.html" class="tsd-signature-type">BillingStatusesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:333</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L336">manage.ts:336</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -812,7 +917,7 @@
 					<div class="tsd-signature tsd-kind-icon">Billing<wbr>Terms<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.billingtermsapi.html" class="tsd-signature-type">BillingTermsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:334</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L337">manage.ts:337</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -822,7 +927,7 @@
 					<div class="tsd-signature tsd-kind-icon">Board<wbr>Auto<wbr>Assign<wbr>Resources<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.boardautoassignresourcesapi.html" class="tsd-signature-type">BoardAutoAssignResourcesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:335</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L338">manage.ts:338</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -832,7 +937,7 @@
 					<div class="tsd-signature tsd-kind-icon">Board<wbr>Auto<wbr>Templates<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.boardautotemplatesapi.html" class="tsd-signature-type">BoardAutoTemplatesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:336</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L339">manage.ts:339</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -842,7 +947,7 @@
 					<div class="tsd-signature tsd-kind-icon">Board<wbr>Excluded<wbr>Members<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.boardexcludedmembersapi.html" class="tsd-signature-type">BoardExcludedMembersApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:504</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L507">manage.ts:507</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -852,7 +957,7 @@
 					<div class="tsd-signature tsd-kind-icon">Board<wbr>Item<wbr>Associations<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.boarditemassociationsapi.html" class="tsd-signature-type">BoardItemAssociationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:337</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L340">manage.ts:340</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -862,7 +967,7 @@
 					<div class="tsd-signature tsd-kind-icon">Board<wbr>Items<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.boarditemsapi.html" class="tsd-signature-type">BoardItemsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:505</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L508">manage.ts:508</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -872,7 +977,7 @@
 					<div class="tsd-signature tsd-kind-icon">Board<wbr>Notifications<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.boardnotificationsapi.html" class="tsd-signature-type">BoardNotificationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:338</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L341">manage.ts:341</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -882,7 +987,7 @@
 					<div class="tsd-signature tsd-kind-icon">Board<wbr>Status<wbr>Notifications<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.boardstatusnotificationsapi.html" class="tsd-signature-type">BoardStatusNotificationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:339</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L342">manage.ts:342</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -892,7 +997,7 @@
 					<div class="tsd-signature tsd-kind-icon">Board<wbr>Statuses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.boardstatusesapi.html" class="tsd-signature-type">BoardStatusesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:506</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L509">manage.ts:509</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -902,7 +1007,7 @@
 					<div class="tsd-signature tsd-kind-icon">Board<wbr>Sub<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.boardsubtypesapi.html" class="tsd-signature-type">BoardSubTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:507</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L510">manage.ts:510</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -912,7 +1017,7 @@
 					<div class="tsd-signature tsd-kind-icon">Board<wbr>Teams<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.boardteamsapi.html" class="tsd-signature-type">BoardTeamsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:508</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L511">manage.ts:511</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -922,7 +1027,7 @@
 					<div class="tsd-signature tsd-kind-icon">Board<wbr>Type<wbr>Sub<wbr>Type<wbr>Item<wbr>Associations<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.boardtypesubtypeitemassociationsapi.html" class="tsd-signature-type">BoardTypeSubTypeItemAssociationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:340</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L343">manage.ts:343</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -932,7 +1037,7 @@
 					<div class="tsd-signature tsd-kind-icon">Board<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.boardtypesapi.html" class="tsd-signature-type">BoardTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:509</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L512">manage.ts:512</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -942,7 +1047,7 @@
 					<div class="tsd-signature tsd-kind-icon">Boards<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.boardsapi.html" class="tsd-signature-type">BoardsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:510</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L513">manage.ts:513</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -952,7 +1057,7 @@
 					<div class="tsd-signature tsd-kind-icon">Calendars<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.calendarsapi.html" class="tsd-signature-type">CalendarsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:341</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L344">manage.ts:344</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -962,7 +1067,7 @@
 					<div class="tsd-signature tsd-kind-icon">Callbacks<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.callbacksapi.html" class="tsd-signature-type">CallbacksApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:511</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L514">manage.ts:514</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -972,7 +1077,7 @@
 					<div class="tsd-signature tsd-kind-icon">Campaign<wbr>Audits<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.campaignauditsapi.html" class="tsd-signature-type">CampaignAuditsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:512</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L515">manage.ts:515</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -982,7 +1087,7 @@
 					<div class="tsd-signature tsd-kind-icon">Campaign<wbr>Emails<wbr>Opened<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.campaignemailsopenedapi.html" class="tsd-signature-type">CampaignEmailsOpenedApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:513</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L516">manage.ts:516</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -992,7 +1097,7 @@
 					<div class="tsd-signature tsd-kind-icon">Campaign<wbr>Forms<wbr>Submitted<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.campaignformssubmittedapi.html" class="tsd-signature-type">CampaignFormsSubmittedApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:514</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L517">manage.ts:517</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1002,7 +1107,7 @@
 					<div class="tsd-signature tsd-kind-icon">Campaign<wbr>Links<wbr>Clicked<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.campaignlinksclickedapi.html" class="tsd-signature-type">CampaignLinksClickedApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:515</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L518">manage.ts:518</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1012,7 +1117,7 @@
 					<div class="tsd-signature tsd-kind-icon">Campaign<wbr>Statuses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.campaignstatusesapi.html" class="tsd-signature-type">CampaignStatusesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:516</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L519">manage.ts:519</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1022,7 +1127,7 @@
 					<div class="tsd-signature tsd-kind-icon">Campaign<wbr>Sub<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.campaignsubtypesapi.html" class="tsd-signature-type">CampaignSubTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:517</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L520">manage.ts:520</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1032,7 +1137,7 @@
 					<div class="tsd-signature tsd-kind-icon">Campaign<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.campaigntypesapi.html" class="tsd-signature-type">CampaignTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:518</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L521">manage.ts:521</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1042,7 +1147,7 @@
 					<div class="tsd-signature tsd-kind-icon">Campaigns<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.campaignsapi.html" class="tsd-signature-type">CampaignsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:519</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L522">manage.ts:522</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1052,7 +1157,7 @@
 					<div class="tsd-signature tsd-kind-icon">Catalog<wbr>Components<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.catalogcomponentsapi.html" class="tsd-signature-type">CatalogComponentsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:520</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L523">manage.ts:523</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1062,7 +1167,7 @@
 					<div class="tsd-signature tsd-kind-icon">Catalogs<wbr>Item<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.catalogsitemapi.html" class="tsd-signature-type">CatalogsItemApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:521</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L524">manage.ts:524</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1072,7 +1177,7 @@
 					<div class="tsd-signature tsd-kind-icon">Categories<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.categoriesapi.html" class="tsd-signature-type">CategoriesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:522</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L525">manage.ts:525</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1082,7 +1187,7 @@
 					<div class="tsd-signature tsd-kind-icon">Certifications<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.certificationsapi.html" class="tsd-signature-type">CertificationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:523</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L526">manage.ts:526</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1092,7 +1197,7 @@
 					<div class="tsd-signature tsd-kind-icon">Charge<wbr>Code<wbr>Expense<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.chargecodeexpensetypesapi.html" class="tsd-signature-type">ChargeCodeExpenseTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:342</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L345">manage.ts:345</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1102,7 +1207,7 @@
 					<div class="tsd-signature tsd-kind-icon">Charge<wbr>Codes<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.chargecodesapi.html" class="tsd-signature-type">ChargeCodesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:343</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L346">manage.ts:346</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1112,7 +1217,7 @@
 					<div class="tsd-signature tsd-kind-icon">Classifications<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.classificationsapi.html" class="tsd-signature-type">ClassificationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:344</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L347">manage.ts:347</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1122,7 +1227,7 @@
 					<div class="tsd-signature tsd-kind-icon">Closed<wbr>Invoices<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.closedinvoicesapi.html" class="tsd-signature-type">ClosedInvoicesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:624</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L627">manage.ts:627</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1132,7 +1237,7 @@
 					<div class="tsd-signature tsd-kind-icon">Codes<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.codesapi.html" class="tsd-signature-type">CodesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:524</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L527">manage.ts:527</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1142,7 +1247,7 @@
 					<div class="tsd-signature tsd-kind-icon">Commissions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.commissionsapi.html" class="tsd-signature-type">CommissionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:345</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L348">manage.ts:348</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1152,7 +1257,7 @@
 					<div class="tsd-signature tsd-kind-icon">Companies<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.companiesapi.html" class="tsd-signature-type">CompaniesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:525</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L528">manage.ts:528</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1162,7 +1267,7 @@
 					<div class="tsd-signature tsd-kind-icon">Company<wbr>Custom<wbr>Notes<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.companycustomnotesapi.html" class="tsd-signature-type">CompanyCustomNotesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:526</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L529">manage.ts:529</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1172,7 +1277,7 @@
 					<div class="tsd-signature tsd-kind-icon">Company<wbr>Groups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.companygroupsapi.html" class="tsd-signature-type">CompanyGroupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:346</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L349">manage.ts:349</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1182,7 +1287,7 @@
 					<div class="tsd-signature tsd-kind-icon">Company<wbr>Management<wbr>Summary<wbr>Reports<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.companymanagementsummaryreportsapi.html" class="tsd-signature-type">CompanyManagementSummaryReportsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:527</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L530">manage.ts:530</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1192,7 +1297,7 @@
 					<div class="tsd-signature tsd-kind-icon">Company<wbr>Note<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.companynotetypesapi.html" class="tsd-signature-type">CompanyNoteTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:529</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L532">manage.ts:532</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1202,7 +1307,7 @@
 					<div class="tsd-signature tsd-kind-icon">Company<wbr>Notes<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.companynotesapi.html" class="tsd-signature-type">CompanyNotesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:528</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L531">manage.ts:531</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1212,7 +1317,7 @@
 					<div class="tsd-signature tsd-kind-icon">Company<wbr>Picker<wbr>Items<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.companypickeritemsapi.html" class="tsd-signature-type">CompanyPickerItemsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:347</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L350">manage.ts:350</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1222,7 +1327,7 @@
 					<div class="tsd-signature tsd-kind-icon">Company<wbr>Sites<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.companysitesapi.html" class="tsd-signature-type">CompanySitesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:530</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L533">manage.ts:533</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1232,7 +1337,7 @@
 					<div class="tsd-signature tsd-kind-icon">Company<wbr>Statuses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.companystatusesapi.html" class="tsd-signature-type">CompanyStatusesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:531</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L534">manage.ts:534</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1242,7 +1347,7 @@
 					<div class="tsd-signature tsd-kind-icon">Company<wbr>Teams<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.companyteamsapi.html" class="tsd-signature-type">CompanyTeamsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:532</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L535">manage.ts:535</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1252,7 +1357,7 @@
 					<div class="tsd-signature tsd-kind-icon">Company<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.companytypesapi.html" class="tsd-signature-type">CompanyTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:533</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L536">manage.ts:536</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1262,7 +1367,7 @@
 					<div class="tsd-signature tsd-kind-icon">Configuration<wbr>Statuses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.configurationstatusesapi.html" class="tsd-signature-type">ConfigurationStatusesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:534</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L537">manage.ts:537</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1272,7 +1377,7 @@
 					<div class="tsd-signature tsd-kind-icon">Configuration<wbr>Type<wbr>Question<wbr>Values<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.configurationtypequestionvaluesapi.html" class="tsd-signature-type">ConfigurationTypeQuestionValuesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:348</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L351">manage.ts:351</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1282,7 +1387,7 @@
 					<div class="tsd-signature tsd-kind-icon">Configuration<wbr>Type<wbr>Questions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.configurationtypequestionsapi.html" class="tsd-signature-type">ConfigurationTypeQuestionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:535</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L538">manage.ts:538</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1292,7 +1397,7 @@
 					<div class="tsd-signature tsd-kind-icon">Configuration<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.configurationtypesapi.html" class="tsd-signature-type">ConfigurationTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:536</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L539">manage.ts:539</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1302,7 +1407,7 @@
 					<div class="tsd-signature tsd-kind-icon">Configurations<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.configurationsapi.html" class="tsd-signature-type">ConfigurationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:539</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L542">manage.ts:542</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1312,7 +1417,7 @@
 					<div class="tsd-signature tsd-kind-icon">Connect<wbr>Wise<wbr>Hosted<wbr>Setups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.connectwisehostedsetupsapi.html" class="tsd-signature-type">ConnectWiseHostedSetupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:546</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L549">manage.ts:549</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1322,7 +1427,7 @@
 					<div class="tsd-signature tsd-kind-icon">Contact<wbr>Communications<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.contactcommunicationsapi.html" class="tsd-signature-type">ContactCommunicationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:545</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L548">manage.ts:548</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1332,7 +1437,7 @@
 					<div class="tsd-signature tsd-kind-icon">Contact<wbr>Departments<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.contactdepartmentsapi.html" class="tsd-signature-type">ContactDepartmentsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:543</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L546">manage.ts:546</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1342,7 +1447,7 @@
 					<div class="tsd-signature tsd-kind-icon">Contact<wbr>Groups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.contactgroupsapi.html" class="tsd-signature-type">ContactGroupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:349</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L352">manage.ts:352</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1352,7 +1457,7 @@
 					<div class="tsd-signature tsd-kind-icon">Contact<wbr>Notes<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.contactnotesapi.html" class="tsd-signature-type">ContactNotesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:540</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L543">manage.ts:543</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1362,7 +1467,7 @@
 					<div class="tsd-signature tsd-kind-icon">Contact<wbr>Relationships<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.contactrelationshipsapi.html" class="tsd-signature-type">ContactRelationshipsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:544</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L547">manage.ts:547</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1372,7 +1477,7 @@
 					<div class="tsd-signature tsd-kind-icon">Contact<wbr>Tracks<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.contacttracksapi.html" class="tsd-signature-type">ContactTracksApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:542</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L545">manage.ts:545</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1382,7 +1487,7 @@
 					<div class="tsd-signature tsd-kind-icon">Contact<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.contacttypesapi.html" class="tsd-signature-type">ContactTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:541</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L544">manage.ts:544</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1392,7 +1497,7 @@
 					<div class="tsd-signature tsd-kind-icon">Contacts<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.contactsapi.html" class="tsd-signature-type">ContactsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:537</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L540">manage.ts:540</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1402,7 +1507,7 @@
 					<div class="tsd-signature tsd-kind-icon">Corporate<wbr>Structure<wbr>Levels<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.corporatestructurelevelsapi.html" class="tsd-signature-type">CorporateStructureLevelsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:350</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L353">manage.ts:353</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1412,7 +1517,7 @@
 					<div class="tsd-signature tsd-kind-icon">Corporate<wbr>Structures<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.corporatestructuresapi.html" class="tsd-signature-type">CorporateStructuresApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:351</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L354">manage.ts:354</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1422,7 +1527,7 @@
 					<div class="tsd-signature tsd-kind-icon">Countries<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.countriesapi.html" class="tsd-signature-type">CountriesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:352</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L355">manage.ts:355</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1432,7 +1537,7 @@
 					<div class="tsd-signature tsd-kind-icon">Crms<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.crmsapi.html" class="tsd-signature-type">CrmsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:353</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L356">manage.ts:356</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1442,7 +1547,7 @@
 					<div class="tsd-signature tsd-kind-icon">Currencies<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.currenciesapi.html" class="tsd-signature-type">CurrenciesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:538</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L541">manage.ts:541</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1452,7 +1557,7 @@
 					<div class="tsd-signature tsd-kind-icon">Custom<wbr>Report<wbr>Parameters<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.customreportparametersapi.html" class="tsd-signature-type">CustomReportParametersApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:354</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L357">manage.ts:357</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1462,7 +1567,7 @@
 					<div class="tsd-signature tsd-kind-icon">Custom<wbr>Reports<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.customreportsapi.html" class="tsd-signature-type">CustomReportsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:355</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L358">manage.ts:358</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1472,7 +1577,7 @@
 					<div class="tsd-signature tsd-kind-icon">Delivery<wbr>Methods<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.deliverymethodsapi.html" class="tsd-signature-type">DeliveryMethodsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:356</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L359">manage.ts:359</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1482,7 +1587,7 @@
 					<div class="tsd-signature tsd-kind-icon">Department<wbr>Locations<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.departmentlocationsapi.html" class="tsd-signature-type">DepartmentLocationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:357</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L360">manage.ts:360</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1492,7 +1597,7 @@
 					<div class="tsd-signature tsd-kind-icon">Departments<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.departmentsapi.html" class="tsd-signature-type">DepartmentsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:358</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L361">manage.ts:361</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1502,7 +1607,7 @@
 					<div class="tsd-signature tsd-kind-icon">Documents<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.documentsapi.html" class="tsd-signature-type">DocumentsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:547</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L550">manage.ts:550</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1512,7 +1617,7 @@
 					<div class="tsd-signature tsd-kind-icon">Documents<wbr>Setup<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.documentssetupapi.html" class="tsd-signature-type">DocumentsSetupApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:359</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L362">manage.ts:362</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1522,7 +1627,7 @@
 					<div class="tsd-signature tsd-kind-icon">EPay<wbr>Configurations<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.epayconfigurationsapi.html" class="tsd-signature-type">EPayConfigurationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:626</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L629">manage.ts:629</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1532,7 +1637,7 @@
 					<div class="tsd-signature tsd-kind-icon">Email<wbr>Connector<wbr>Parsing<wbr>Rules<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.emailconnectorparsingrulesapi.html" class="tsd-signature-type">EmailConnectorParsingRulesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:360</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L363">manage.ts:363</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1542,7 +1647,7 @@
 					<div class="tsd-signature tsd-kind-icon">Email<wbr>Connector<wbr>Parsing<wbr>Styles<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.emailconnectorparsingstylesapi.html" class="tsd-signature-type">EmailConnectorParsingStylesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:361</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L364">manage.ts:364</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1552,7 +1657,7 @@
 					<div class="tsd-signature tsd-kind-icon">Email<wbr>Connectors<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.emailconnectorsapi.html" class="tsd-signature-type">EmailConnectorsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:362</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L365">manage.ts:365</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1562,7 +1667,7 @@
 					<div class="tsd-signature tsd-kind-icon">Email<wbr>Tokens<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.emailtokensapi.html" class="tsd-signature-type">EmailTokensApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:363</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L366">manage.ts:366</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1572,7 +1677,7 @@
 					<div class="tsd-signature tsd-kind-icon">Entity<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.entitytypesapi.html" class="tsd-signature-type">EntityTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:625</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L628">manage.ts:628</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1582,7 +1687,7 @@
 					<div class="tsd-signature tsd-kind-icon">Expense<wbr>Entries<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.expenseentriesapi.html" class="tsd-signature-type">ExpenseEntriesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:548</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L551">manage.ts:551</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1592,7 +1697,7 @@
 					<div class="tsd-signature tsd-kind-icon">Expense<wbr>Reports<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.expensereportsapi.html" class="tsd-signature-type">ExpenseReportsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:364</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L367">manage.ts:367</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1602,7 +1707,7 @@
 					<div class="tsd-signature tsd-kind-icon">Expense<wbr>Type<wbr>External<wbr>Integration<wbr>References<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.expensetypeexternalintegrationreferencesapi.html" class="tsd-signature-type">ExpenseTypeExternalIntegrationReferencesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:365</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L368">manage.ts:368</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1612,7 +1717,7 @@
 					<div class="tsd-signature tsd-kind-icon">Expense<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.expensetypesapi.html" class="tsd-signature-type">ExpenseTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:549</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L552">manage.ts:552</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1622,7 +1727,7 @@
 					<div class="tsd-signature tsd-kind-icon">Group<wbr>Companies<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.groupcompaniesapi.html" class="tsd-signature-type">GroupCompaniesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:550</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L553">manage.ts:553</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1632,7 +1737,7 @@
 					<div class="tsd-signature tsd-kind-icon">Group<wbr>Contacts<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.groupcontactsapi.html" class="tsd-signature-type">GroupContactsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:552</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L555">manage.ts:555</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1642,7 +1747,7 @@
 					<div class="tsd-signature tsd-kind-icon">Groups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.groupsapi.html" class="tsd-signature-type">GroupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:551</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L554">manage.ts:554</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1652,7 +1757,7 @@
 					<div class="tsd-signature tsd-kind-icon">Holiday<wbr>Lists<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.holidaylistsapi.html" class="tsd-signature-type">HolidayListsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:366</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L369">manage.ts:369</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1662,7 +1767,7 @@
 					<div class="tsd-signature tsd-kind-icon">Holidays<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.holidaysapi.html" class="tsd-signature-type">HolidaysApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:367</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L370">manage.ts:370</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1672,7 +1777,7 @@
 					<div class="tsd-signature tsd-kind-icon">Imaps<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.imapsapi.html" class="tsd-signature-type">ImapsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:368</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L371">manage.ts:371</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1682,7 +1787,7 @@
 					<div class="tsd-signature tsd-kind-icon">Impacts<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.impactsapi.html" class="tsd-signature-type">ImpactsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:369</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L372">manage.ts:372</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1692,7 +1797,7 @@
 					<div class="tsd-signature tsd-kind-icon">Imports<wbr>Mass<wbr>Maintenance<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.importsmassmaintenanceapi.html" class="tsd-signature-type">ImportsMassMaintenanceApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:370</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L373">manage.ts:373</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1702,7 +1807,7 @@
 					<div class="tsd-signature tsd-kind-icon">In<wbr>Out<wbr>Boards<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.inoutboardsapi.html" class="tsd-signature-type">InOutBoardsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:554</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L557">manage.ts:557</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1712,7 +1817,7 @@
 					<div class="tsd-signature tsd-kind-icon">In<wbr>Out<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.inouttypesapi.html" class="tsd-signature-type">InOutTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:555</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L558">manage.ts:558</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1722,7 +1827,7 @@
 					<div class="tsd-signature tsd-kind-icon">Info<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.infoapi.html" class="tsd-signature-type">InfoApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:553</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L556">manage.ts:556</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1732,7 +1837,7 @@
 					<div class="tsd-signature tsd-kind-icon">Integrator<wbr>Logins<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.integratorloginsapi.html" class="tsd-signature-type">IntegratorLoginsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:371</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L374">manage.ts:374</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1742,7 +1847,7 @@
 					<div class="tsd-signature tsd-kind-icon">Invoice<wbr>Email<wbr>Templates<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.invoiceemailtemplatesapi.html" class="tsd-signature-type">InvoiceEmailTemplatesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:372</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L375">manage.ts:375</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1752,7 +1857,7 @@
 					<div class="tsd-signature tsd-kind-icon">Invoice<wbr>Payments<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.invoicepaymentsapi.html" class="tsd-signature-type">InvoicePaymentsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:557</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L560">manage.ts:560</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1762,7 +1867,7 @@
 					<div class="tsd-signature tsd-kind-icon">Invoice<wbr>Template<wbr>Setups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.invoicetemplatesetupsapi.html" class="tsd-signature-type">InvoiceTemplateSetupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:374</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L377">manage.ts:377</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1772,7 +1877,7 @@
 					<div class="tsd-signature tsd-kind-icon">Invoice<wbr>Templates<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.invoicetemplatesapi.html" class="tsd-signature-type">InvoiceTemplatesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:373</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L376">manage.ts:376</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1782,7 +1887,7 @@
 					<div class="tsd-signature tsd-kind-icon">Invoices<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.invoicesapi.html" class="tsd-signature-type">InvoicesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:556</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L559">manage.ts:559</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1792,7 +1897,7 @@
 					<div class="tsd-signature tsd-kind-icon">KPICategories<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.kpicategoriesapi.html" class="tsd-signature-type">KPICategoriesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:375</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L378">manage.ts:378</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1802,7 +1907,7 @@
 					<div class="tsd-signature tsd-kind-icon">KPIs<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.kpisapi.html" class="tsd-signature-type">KPIsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:376</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L379">manage.ts:379</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1812,7 +1917,7 @@
 					<div class="tsd-signature tsd-kind-icon">Knowledge<wbr>Base<wbr>Articles<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.knowledgebasearticlesapi.html" class="tsd-signature-type">KnowledgeBaseArticlesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:558</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L561">manage.ts:561</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1822,7 +1927,7 @@
 					<div class="tsd-signature tsd-kind-icon">Labs<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.labsapi.html" class="tsd-signature-type">LabsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:627</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L630">manage.ts:630</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1832,7 +1937,7 @@
 					<div class="tsd-signature tsd-kind-icon">Ldap<wbr>Configurations<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.ldapconfigurationsapi.html" class="tsd-signature-type">LdapConfigurationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:377</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L380">manage.ts:380</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1842,7 +1947,7 @@
 					<div class="tsd-signature tsd-kind-icon">Legacy<wbr>Campaign<wbr>Sub<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.legacycampaignsubtypesapi.html" class="tsd-signature-type">LegacyCampaignSubTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:378</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L381">manage.ts:381</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1852,7 +1957,7 @@
 					<div class="tsd-signature tsd-kind-icon">Legacy<wbr>Sub<wbr>Categories<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.legacysubcategoriesapi.html" class="tsd-signature-type">LegacySubCategoriesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:379</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L382">manage.ts:382</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1862,7 +1967,7 @@
 					<div class="tsd-signature tsd-kind-icon">Links<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.linksapi.html" class="tsd-signature-type">LinksApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:559</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L562">manage.ts:562</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1872,7 +1977,7 @@
 					<div class="tsd-signature tsd-kind-icon">Location<wbr>Departments<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.locationdepartmentsapi.html" class="tsd-signature-type">LocationDepartmentsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:380</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L383">manage.ts:383</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1882,7 +1987,7 @@
 					<div class="tsd-signature tsd-kind-icon">Location<wbr>Work<wbr>Roles<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.locationworkrolesapi.html" class="tsd-signature-type">LocationWorkRolesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:381</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L384">manage.ts:384</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1892,7 +1997,7 @@
 					<div class="tsd-signature tsd-kind-icon">Locations<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.locationsapi.html" class="tsd-signature-type">LocationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:560</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L563">manage.ts:563</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1902,7 +2007,7 @@
 					<div class="tsd-signature tsd-kind-icon">Managed<wbr>Devices<wbr>Integration<wbr>Cross<wbr>References<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.manageddevicesintegrationcrossreferencesapi.html" class="tsd-signature-type">ManagedDevicesIntegrationCrossReferencesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:382</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L385">manage.ts:385</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1912,7 +2017,7 @@
 					<div class="tsd-signature tsd-kind-icon">Managed<wbr>Devices<wbr>Integration<wbr>Logins<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.manageddevicesintegrationloginsapi.html" class="tsd-signature-type">ManagedDevicesIntegrationLoginsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:383</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L386">manage.ts:386</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1922,7 +2027,7 @@
 					<div class="tsd-signature tsd-kind-icon">Managed<wbr>Devices<wbr>Integration<wbr>Notifications<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.manageddevicesintegrationnotificationsapi.html" class="tsd-signature-type">ManagedDevicesIntegrationNotificationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:384</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L387">manage.ts:387</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1932,7 +2037,7 @@
 					<div class="tsd-signature tsd-kind-icon">Managed<wbr>Devices<wbr>Integrations<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.manageddevicesintegrationsapi.html" class="tsd-signature-type">ManagedDevicesIntegrationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:385</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L388">manage.ts:388</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1942,7 +2047,7 @@
 					<div class="tsd-signature tsd-kind-icon">Management<wbr>Backups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.managementbackupsapi.html" class="tsd-signature-type">ManagementBackupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:563</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L566">manage.ts:566</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1952,7 +2057,7 @@
 					<div class="tsd-signature tsd-kind-icon">Management<wbr>Execute<wbr>Managed<wbr>ItSyncs<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.managementexecutemanageditsyncsapi.html" class="tsd-signature-type">ManagementExecuteManagedItSyncsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:386</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L389">manage.ts:389</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1962,7 +2067,7 @@
 					<div class="tsd-signature tsd-kind-icon">Management<wbr>ItSolution<wbr>Agreement<wbr>Interface<wbr>Parameters<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.managementitsolutionagreementinterfaceparametersapi.html" class="tsd-signature-type">ManagementItSolutionAgreementInterfaceParametersApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:387</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L390">manage.ts:390</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1972,7 +2077,7 @@
 					<div class="tsd-signature tsd-kind-icon">Management<wbr>ItSolutions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.managementitsolutionsapi.html" class="tsd-signature-type">ManagementItSolutionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:388</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L391">manage.ts:391</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1982,7 +2087,7 @@
 					<div class="tsd-signature tsd-kind-icon">Management<wbr>Logs<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.managementlogsapi.html" class="tsd-signature-type">ManagementLogsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:389</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L392">manage.ts:392</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1992,7 +2097,7 @@
 					<div class="tsd-signature tsd-kind-icon">Management<wbr>Networks<wbr>Security<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.managementnetworkssecurityapi.html" class="tsd-signature-type">ManagementNetworksSecurityApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:390</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L393">manage.ts:393</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2002,7 +2107,7 @@
 					<div class="tsd-signature tsd-kind-icon">Management<wbr>Report<wbr>Notifications<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.managementreportnotificationsapi.html" class="tsd-signature-type">ManagementReportNotificationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:391</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L394">manage.ts:394</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2012,7 +2117,7 @@
 					<div class="tsd-signature tsd-kind-icon">Managements<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.managementsapi.html" class="tsd-signature-type">ManagementsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:392</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L395">manage.ts:395</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2022,7 +2127,7 @@
 					<div class="tsd-signature tsd-kind-icon">Manufacturers<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.manufacturersapi.html" class="tsd-signature-type">ManufacturersApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:565</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L568">manage.ts:568</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2032,7 +2137,7 @@
 					<div class="tsd-signature tsd-kind-icon">Market<wbr>Descriptions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.marketdescriptionsapi.html" class="tsd-signature-type">MarketDescriptionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:564</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L567">manage.ts:567</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2042,7 +2147,7 @@
 					<div class="tsd-signature tsd-kind-icon">Member<wbr>Accruals<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.memberaccrualsapi.html" class="tsd-signature-type">MemberAccrualsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:393</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L396">manage.ts:396</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2052,7 +2157,7 @@
 					<div class="tsd-signature tsd-kind-icon">Member<wbr>Certifications<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.membercertificationsapi.html" class="tsd-signature-type">MemberCertificationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:394</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L397">manage.ts:397</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2062,7 +2167,7 @@
 					<div class="tsd-signature tsd-kind-icon">Member<wbr>Delegations<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.memberdelegationsapi.html" class="tsd-signature-type">MemberDelegationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:395</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L398">manage.ts:398</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2072,7 +2177,7 @@
 					<div class="tsd-signature tsd-kind-icon">Member<wbr>Skills<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.memberskillsapi.html" class="tsd-signature-type">MemberSkillsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:396</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L399">manage.ts:399</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2082,7 +2187,7 @@
 					<div class="tsd-signature tsd-kind-icon">Member<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.membertypesapi.html" class="tsd-signature-type">MemberTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:562</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L565">manage.ts:565</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2092,7 +2197,7 @@
 					<div class="tsd-signature tsd-kind-icon">Members<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.membersapi.html" class="tsd-signature-type">MembersApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:561</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L564">manage.ts:564</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2102,7 +2207,7 @@
 					<div class="tsd-signature tsd-kind-icon">Menu<wbr>Entries<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.menuentriesapi.html" class="tsd-signature-type">MenuEntriesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:566</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L569">manage.ts:569</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2112,7 +2217,7 @@
 					<div class="tsd-signature tsd-kind-icon">Menu<wbr>Entry<wbr>Locations<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.menuentrylocationsapi.html" class="tsd-signature-type">MenuEntryLocationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:397</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L400">manage.ts:400</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2122,7 +2227,7 @@
 					<div class="tsd-signature tsd-kind-icon">My<wbr>Member<wbr>Certifications<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.mymembercertificationsapi.html" class="tsd-signature-type">MyMemberCertificationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:628</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L631">manage.ts:631</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2132,7 +2237,7 @@
 					<div class="tsd-signature tsd-kind-icon">My<wbr>Members<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.mymembersapi.html" class="tsd-signature-type">MyMembersApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:629</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L632">manage.ts:632</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2142,7 +2247,7 @@
 					<div class="tsd-signature tsd-kind-icon">My<wbr>Securitys<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.mysecuritysapi.html" class="tsd-signature-type">MySecuritysApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:630</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L633">manage.ts:633</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2152,7 +2257,7 @@
 					<div class="tsd-signature tsd-kind-icon">Notification<wbr>Recipients<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.notificationrecipientsapi.html" class="tsd-signature-type">NotificationRecipientsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:398</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L401">manage.ts:401</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2162,7 +2267,7 @@
 					<div class="tsd-signature tsd-kind-icon">Opportunities<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.opportunitiesapi.html" class="tsd-signature-type">OpportunitiesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:567</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L570">manage.ts:570</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2172,7 +2277,7 @@
 					<div class="tsd-signature tsd-kind-icon">Opportunity<wbr>Contacts<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.opportunitycontactsapi.html" class="tsd-signature-type">OpportunityContactsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:574</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L577">manage.ts:577</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2182,7 +2287,7 @@
 					<div class="tsd-signature tsd-kind-icon">Opportunity<wbr>Forecasts<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.opportunityforecastsapi.html" class="tsd-signature-type">OpportunityForecastsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:577</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L580">manage.ts:580</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2192,7 +2297,7 @@
 					<div class="tsd-signature tsd-kind-icon">Opportunity<wbr>Notes<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.opportunitynotesapi.html" class="tsd-signature-type">OpportunityNotesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:570</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L573">manage.ts:573</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2202,7 +2307,7 @@
 					<div class="tsd-signature tsd-kind-icon">Opportunity<wbr>Ratings<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.opportunityratingsapi.html" class="tsd-signature-type">OpportunityRatingsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:573</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L576">manage.ts:576</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2212,7 +2317,7 @@
 					<div class="tsd-signature tsd-kind-icon">Opportunity<wbr>Stages<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.opportunitystagesapi.html" class="tsd-signature-type">OpportunityStagesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:576</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L579">manage.ts:579</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2222,7 +2327,7 @@
 					<div class="tsd-signature tsd-kind-icon">Opportunity<wbr>Statuses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.opportunitystatusesapi.html" class="tsd-signature-type">OpportunityStatusesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:575</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L578">manage.ts:578</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2232,7 +2337,7 @@
 					<div class="tsd-signature tsd-kind-icon">Opportunity<wbr>Teams<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.opportunityteamsapi.html" class="tsd-signature-type">OpportunityTeamsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:571</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L574">manage.ts:574</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2242,7 +2347,7 @@
 					<div class="tsd-signature tsd-kind-icon">Opportunity<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.opportunitytypesapi.html" class="tsd-signature-type">OpportunityTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:572</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L575">manage.ts:575</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2252,7 +2357,7 @@
 					<div class="tsd-signature tsd-kind-icon">Order<wbr>Status<wbr>Notifications<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.orderstatusnotificationsapi.html" class="tsd-signature-type">OrderStatusNotificationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:400</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L403">manage.ts:403</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2262,7 +2367,7 @@
 					<div class="tsd-signature tsd-kind-icon">Order<wbr>Statuses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.orderstatusesapi.html" class="tsd-signature-type">OrderStatusesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:569</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L572">manage.ts:572</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2272,7 +2377,7 @@
 					<div class="tsd-signature tsd-kind-icon">Order<wbr>Statuses<wbr>Email<wbr>Template<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.orderstatusesemailtemplateapi.html" class="tsd-signature-type">OrderStatusesEmailTemplateApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:399</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L402">manage.ts:402</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2282,7 +2387,7 @@
 					<div class="tsd-signature tsd-kind-icon">Orders<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.ordersapi.html" class="tsd-signature-type">OrdersApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:568</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L571">manage.ts:571</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2292,7 +2397,7 @@
 					<div class="tsd-signature tsd-kind-icon">Others<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.othersapi.html" class="tsd-signature-type">OthersApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:401</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L404">manage.ts:404</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2302,7 +2407,7 @@
 					<div class="tsd-signature tsd-kind-icon">Ownership<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.ownershiptypesapi.html" class="tsd-signature-type">OwnershipTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:578</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L581">manage.ts:581</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2312,7 +2417,7 @@
 					<div class="tsd-signature tsd-kind-icon">Parsing<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.parsingtypesapi.html" class="tsd-signature-type">ParsingTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:402</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L405">manage.ts:405</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2322,7 +2427,7 @@
 					<div class="tsd-signature tsd-kind-icon">Parsing<wbr>Variables<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.parsingvariablesapi.html" class="tsd-signature-type">ParsingVariablesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:403</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L406">manage.ts:406</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2332,7 +2437,7 @@
 					<div class="tsd-signature tsd-kind-icon">Payment<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.paymenttypesapi.html" class="tsd-signature-type">PaymentTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:404</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L407">manage.ts:407</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2342,7 +2447,7 @@
 					<div class="tsd-signature tsd-kind-icon">Portal<wbr>Calendars<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.portalcalendarsapi.html" class="tsd-signature-type">PortalCalendarsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:405</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L408">manage.ts:408</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2352,7 +2457,7 @@
 					<div class="tsd-signature tsd-kind-icon">Portal<wbr>Configuration<wbr>Invoice<wbr>Setups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.portalconfigurationinvoicesetupsapi.html" class="tsd-signature-type">PortalConfigurationInvoiceSetupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:406</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L409">manage.ts:409</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2362,7 +2467,7 @@
 					<div class="tsd-signature tsd-kind-icon">Portal<wbr>Configuration<wbr>Opportunity<wbr>Setups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.portalconfigurationopportunitysetupsapi.html" class="tsd-signature-type">PortalConfigurationOpportunitySetupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:407</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L410">manage.ts:410</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2372,7 +2477,7 @@
 					<div class="tsd-signature tsd-kind-icon">Portal<wbr>Configuration<wbr>Password<wbr>Email<wbr>Setups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.portalconfigurationpasswordemailsetupsapi.html" class="tsd-signature-type">PortalConfigurationPasswordEmailSetupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:408</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L411">manage.ts:411</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2382,7 +2487,7 @@
 					<div class="tsd-signature tsd-kind-icon">Portal<wbr>Configuration<wbr>Payment<wbr>Processors<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.portalconfigurationpaymentprocessorsapi.html" class="tsd-signature-type">PortalConfigurationPaymentProcessorsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:631</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L634">manage.ts:634</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2392,7 +2497,7 @@
 					<div class="tsd-signature tsd-kind-icon">Portal<wbr>Configuration<wbr>Project<wbr>Setups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.portalconfigurationprojectsetupsapi.html" class="tsd-signature-type">PortalConfigurationProjectSetupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:409</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L412">manage.ts:412</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2402,7 +2507,7 @@
 					<div class="tsd-signature tsd-kind-icon">Portal<wbr>Configuration<wbr>Service<wbr>Setups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.portalconfigurationservicesetupsapi.html" class="tsd-signature-type">PortalConfigurationServiceSetupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:411</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L414">manage.ts:414</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2412,7 +2517,7 @@
 					<div class="tsd-signature tsd-kind-icon">Portal<wbr>Configurations<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.portalconfigurationsapi.html" class="tsd-signature-type">PortalConfigurationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:410</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L413">manage.ts:413</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2422,7 +2527,7 @@
 					<div class="tsd-signature tsd-kind-icon">Portal<wbr>Reports<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.portalreportsapi.html" class="tsd-signature-type">PortalReportsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:412</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L415">manage.ts:415</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2432,7 +2537,7 @@
 					<div class="tsd-signature tsd-kind-icon">Portal<wbr>Security<wbr>Levels<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.portalsecuritylevelsapi.html" class="tsd-signature-type">PortalSecurityLevelsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:414</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L417">manage.ts:417</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2442,7 +2547,7 @@
 					<div class="tsd-signature tsd-kind-icon">Portal<wbr>Security<wbr>Settings<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.portalsecuritysettingsapi.html" class="tsd-signature-type">PortalSecuritySettingsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:413</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L416">manage.ts:416</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2452,7 +2557,7 @@
 					<div class="tsd-signature tsd-kind-icon">Pricing<wbr>Breaks<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.pricingbreaksapi.html" class="tsd-signature-type">PricingBreaksApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:579</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L582">manage.ts:582</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2462,7 +2567,7 @@
 					<div class="tsd-signature tsd-kind-icon">Pricing<wbr>Details<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.pricingdetailsapi.html" class="tsd-signature-type">PricingDetailsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:586</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L589">manage.ts:589</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2472,7 +2577,7 @@
 					<div class="tsd-signature tsd-kind-icon">Pricing<wbr>Schedules<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.pricingschedulesapi.html" class="tsd-signature-type">PricingSchedulesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:589</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L592">manage.ts:592</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2482,7 +2587,7 @@
 					<div class="tsd-signature tsd-kind-icon">Priorities<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.prioritiesapi.html" class="tsd-signature-type">PrioritiesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:581</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L584">manage.ts:584</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2492,7 +2597,7 @@
 					<div class="tsd-signature tsd-kind-icon">Procurement<wbr>Settings<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.procurementsettingsapi.html" class="tsd-signature-type">ProcurementSettingsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:632</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L635">manage.ts:635</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2502,7 +2607,7 @@
 					<div class="tsd-signature tsd-kind-icon">Product<wbr>Components<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.productcomponentsapi.html" class="tsd-signature-type">ProductComponentsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:590</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L593">manage.ts:593</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2512,7 +2617,7 @@
 					<div class="tsd-signature tsd-kind-icon">Product<wbr>Picking<wbr>Shipping<wbr>Details<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.productpickingshippingdetailsapi.html" class="tsd-signature-type">ProductPickingShippingDetailsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:593</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L596">manage.ts:596</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2522,7 +2627,7 @@
 					<div class="tsd-signature tsd-kind-icon">Product<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.producttypesapi.html" class="tsd-signature-type">ProductTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:583</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L586">manage.ts:586</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2532,7 +2637,7 @@
 					<div class="tsd-signature tsd-kind-icon">Products<wbr>Item<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.productsitemapi.html" class="tsd-signature-type">ProductsItemApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:582</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L585">manage.ts:585</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2542,7 +2647,7 @@
 					<div class="tsd-signature tsd-kind-icon">Project<wbr>Contacts<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.projectcontactsapi.html" class="tsd-signature-type">ProjectContactsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:588</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L591">manage.ts:591</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2552,7 +2657,7 @@
 					<div class="tsd-signature tsd-kind-icon">Project<wbr>Notes<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.projectnotesapi.html" class="tsd-signature-type">ProjectNotesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:584</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L587">manage.ts:587</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2562,7 +2667,7 @@
 					<div class="tsd-signature tsd-kind-icon">Project<wbr>Phases<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.projectphasesapi.html" class="tsd-signature-type">ProjectPhasesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:585</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L588">manage.ts:588</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2572,7 +2677,7 @@
 					<div class="tsd-signature tsd-kind-icon">Project<wbr>Security<wbr>Role<wbr>Settings<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.projectsecurityrolesettingsapi.html" class="tsd-signature-type">ProjectSecurityRoleSettingsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:416</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L419">manage.ts:419</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2582,7 +2687,7 @@
 					<div class="tsd-signature tsd-kind-icon">Project<wbr>Security<wbr>Roles<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.projectsecurityrolesapi.html" class="tsd-signature-type">ProjectSecurityRolesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:415</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L418">manage.ts:418</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2592,7 +2697,7 @@
 					<div class="tsd-signature tsd-kind-icon">Project<wbr>Statuses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.projectstatusesapi.html" class="tsd-signature-type">ProjectStatusesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:417</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L420">manage.ts:420</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2602,7 +2707,7 @@
 					<div class="tsd-signature tsd-kind-icon">Project<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.projecttypesapi.html" class="tsd-signature-type">ProjectTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:418</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L421">manage.ts:421</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2612,7 +2717,7 @@
 					<div class="tsd-signature tsd-kind-icon">Projects<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.projectsapi.html" class="tsd-signature-type">ProjectsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:580</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L583">manage.ts:583</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2622,7 +2727,7 @@
 					<div class="tsd-signature tsd-kind-icon">Projects<wbr>Team<wbr>Members<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.projectsteammembersapi.html" class="tsd-signature-type">ProjectsTeamMembersApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:591</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L594">manage.ts:594</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2632,7 +2737,7 @@
 					<div class="tsd-signature tsd-kind-icon">Purchase<wbr>Order<wbr>Line<wbr>Items<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.purchaseorderlineitemsapi.html" class="tsd-signature-type">PurchaseOrderLineItemsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:592</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L595">manage.ts:595</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2642,7 +2747,7 @@
 					<div class="tsd-signature tsd-kind-icon">Purchase<wbr>Order<wbr>Status<wbr>Email<wbr>Templates<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.purchaseorderstatusemailtemplatesapi.html" class="tsd-signature-type">PurchaseOrderStatusEmailTemplatesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:419</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L422">manage.ts:422</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2652,7 +2757,7 @@
 					<div class="tsd-signature tsd-kind-icon">Purchase<wbr>Order<wbr>Status<wbr>Notifications<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.purchaseorderstatusnotificationsapi.html" class="tsd-signature-type">PurchaseOrderStatusNotificationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:421</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L424">manage.ts:424</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2662,7 +2767,7 @@
 					<div class="tsd-signature tsd-kind-icon">Purchase<wbr>Order<wbr>Statuses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.purchaseorderstatusesapi.html" class="tsd-signature-type">PurchaseOrderStatusesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:420</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L423">manage.ts:423</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2672,7 +2777,7 @@
 					<div class="tsd-signature tsd-kind-icon">Purchase<wbr>Orders<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.purchaseordersapi.html" class="tsd-signature-type">PurchaseOrdersApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:587</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L590">manage.ts:590</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2682,7 +2787,7 @@
 					<div class="tsd-signature tsd-kind-icon">Report<wbr>Card<wbr>Details<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.reportcarddetailsapi.html" class="tsd-signature-type">ReportCardDetailsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:422</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L425">manage.ts:425</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2692,7 +2797,7 @@
 					<div class="tsd-signature tsd-kind-icon">Report<wbr>Cards<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.reportcardsapi.html" class="tsd-signature-type">ReportCardsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:423</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L426">manage.ts:426</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2702,7 +2807,7 @@
 					<div class="tsd-signature tsd-kind-icon">Reporting<wbr>Services<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.reportingservicesapi.html" class="tsd-signature-type">ReportingServicesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:424</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L427">manage.ts:427</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2712,7 +2817,7 @@
 					<div class="tsd-signature tsd-kind-icon">Reports<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.reportsapi.html" class="tsd-signature-type">ReportsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:594</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L597">manage.ts:597</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2722,7 +2827,7 @@
 					<div class="tsd-signature tsd-kind-icon">Rma<wbr>Actions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.rmaactionsapi.html" class="tsd-signature-type">RmaActionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:595</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L598">manage.ts:598</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2732,7 +2837,7 @@
 					<div class="tsd-signature tsd-kind-icon">Rma<wbr>Dispositions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.rmadispositionsapi.html" class="tsd-signature-type">RmaDispositionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:596</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L599">manage.ts:599</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2742,7 +2847,7 @@
 					<div class="tsd-signature tsd-kind-icon">Rma<wbr>Status<wbr>Email<wbr>Templates<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.rmastatusemailtemplatesapi.html" class="tsd-signature-type">RmaStatusEmailTemplatesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:425</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L428">manage.ts:428</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2752,7 +2857,7 @@
 					<div class="tsd-signature tsd-kind-icon">Rma<wbr>Status<wbr>Notifications<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.rmastatusnotificationsapi.html" class="tsd-signature-type">RmaStatusNotificationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:427</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L430">manage.ts:430</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2762,7 +2867,7 @@
 					<div class="tsd-signature tsd-kind-icon">Rma<wbr>Statuses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.rmastatusesapi.html" class="tsd-signature-type">RmaStatusesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:426</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L429">manage.ts:429</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2772,7 +2877,7 @@
 					<div class="tsd-signature tsd-kind-icon">Roles<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.rolesapi.html" class="tsd-signature-type">RolesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:597</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L600">manage.ts:600</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2782,7 +2887,7 @@
 					<div class="tsd-signature tsd-kind-icon">SLAPriorities<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.slaprioritiesapi.html" class="tsd-signature-type">SLAPrioritiesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:445</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L448">manage.ts:448</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2792,7 +2897,7 @@
 					<div class="tsd-signature tsd-kind-icon">SLAs<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.slasapi.html" class="tsd-signature-type">SLAsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:446</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L449">manage.ts:449</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2802,7 +2907,7 @@
 					<div class="tsd-signature tsd-kind-icon">Sales<wbr>Probabilities<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.salesprobabilitiesapi.html" class="tsd-signature-type">SalesProbabilitiesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:598</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L601">manage.ts:601</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2812,7 +2917,7 @@
 					<div class="tsd-signature tsd-kind-icon">Sales<wbr>Quotas<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.salesquotasapi.html" class="tsd-signature-type">SalesQuotasApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:428</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L431">manage.ts:431</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2822,7 +2927,7 @@
 					<div class="tsd-signature tsd-kind-icon">Sales<wbr>Team<wbr>Members<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.salesteammembersapi.html" class="tsd-signature-type">SalesTeamMembersApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:429</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L432">manage.ts:432</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2832,7 +2937,7 @@
 					<div class="tsd-signature tsd-kind-icon">Sales<wbr>Teams<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.salesteamsapi.html" class="tsd-signature-type">SalesTeamsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:430</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L433">manage.ts:433</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2842,7 +2947,7 @@
 					<div class="tsd-signature tsd-kind-icon">Schedule<wbr>Colors<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.schedulecolorsapi.html" class="tsd-signature-type">ScheduleColorsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:431</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L434">manage.ts:434</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2852,7 +2957,7 @@
 					<div class="tsd-signature tsd-kind-icon">Schedule<wbr>Details<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.scheduledetailsapi.html" class="tsd-signature-type">ScheduleDetailsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:432</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L435">manage.ts:435</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2862,7 +2967,7 @@
 					<div class="tsd-signature tsd-kind-icon">Schedule<wbr>Entries<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.scheduleentriesapi.html" class="tsd-signature-type">ScheduleEntriesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:606</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L609">manage.ts:609</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2872,7 +2977,7 @@
 					<div class="tsd-signature tsd-kind-icon">Schedule<wbr>Reminder<wbr>Times<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.scheduleremindertimesapi.html" class="tsd-signature-type">ScheduleReminderTimesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:611</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L614">manage.ts:614</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2882,7 +2987,7 @@
 					<div class="tsd-signature tsd-kind-icon">Schedule<wbr>Statuses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.schedulestatusesapi.html" class="tsd-signature-type">ScheduleStatusesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:609</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L612">manage.ts:612</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2892,7 +2997,7 @@
 					<div class="tsd-signature tsd-kind-icon">Schedule<wbr>Stopwatches<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.schedulestopwatchesapi.html" class="tsd-signature-type">ScheduleStopwatchesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:610</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L613">manage.ts:613</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2902,7 +3007,7 @@
 					<div class="tsd-signature tsd-kind-icon">Schedule<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.scheduletypesapi.html" class="tsd-signature-type">ScheduleTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:603</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L606">manage.ts:606</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2912,7 +3017,7 @@
 					<div class="tsd-signature tsd-kind-icon">Security<wbr>Role<wbr>Settings<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.securityrolesettingsapi.html" class="tsd-signature-type">SecurityRoleSettingsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:434</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L437">manage.ts:437</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2922,7 +3027,7 @@
 					<div class="tsd-signature tsd-kind-icon">Security<wbr>Roles<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.securityrolesapi.html" class="tsd-signature-type">SecurityRolesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:433</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L436">manage.ts:436</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2932,7 +3037,7 @@
 					<div class="tsd-signature tsd-kind-icon">Service<wbr>Email<wbr>Templates<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.serviceemailtemplatesapi.html" class="tsd-signature-type">ServiceEmailTemplatesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:435</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L438">manage.ts:438</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2942,7 +3047,7 @@
 					<div class="tsd-signature tsd-kind-icon">Service<wbr>Locations<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.servicelocationsapi.html" class="tsd-signature-type">ServiceLocationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:436</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L439">manage.ts:439</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2952,7 +3057,7 @@
 					<div class="tsd-signature tsd-kind-icon">Service<wbr>Signoffs<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.servicesignoffsapi.html" class="tsd-signature-type">ServiceSignoffsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:438</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L441">manage.ts:441</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2962,7 +3067,7 @@
 					<div class="tsd-signature tsd-kind-icon">Service<wbr>Survey<wbr>Questions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.servicesurveyquestionsapi.html" class="tsd-signature-type">ServiceSurveyQuestionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:439</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L442">manage.ts:442</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2972,7 +3077,7 @@
 					<div class="tsd-signature tsd-kind-icon">Service<wbr>Surveys<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.servicesurveysapi.html" class="tsd-signature-type">ServiceSurveysApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:440</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L443">manage.ts:443</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2982,7 +3087,7 @@
 					<div class="tsd-signature tsd-kind-icon">Service<wbr>Teams<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.serviceteamsapi.html" class="tsd-signature-type">ServiceTeamsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:441</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L444">manage.ts:444</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2992,7 +3097,7 @@
 					<div class="tsd-signature tsd-kind-icon">Service<wbr>Templates<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.servicetemplatesapi.html" class="tsd-signature-type">ServiceTemplatesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:442</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L445">manage.ts:445</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3002,7 +3107,7 @@
 					<div class="tsd-signature tsd-kind-icon">Services<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.servicesapi.html" class="tsd-signature-type">ServicesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:437</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L440">manage.ts:440</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3012,7 +3117,7 @@
 					<div class="tsd-signature tsd-kind-icon">Setup<wbr>Screens<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.setupscreensapi.html" class="tsd-signature-type">SetupScreensApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:443</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L446">manage.ts:446</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3022,7 +3127,7 @@
 					<div class="tsd-signature tsd-kind-icon">Severities<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.severitiesapi.html" class="tsd-signature-type">SeveritiesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:444</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L447">manage.ts:447</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3032,7 +3137,7 @@
 					<div class="tsd-signature tsd-kind-icon">Shipment<wbr>Methods<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.shipmentmethodsapi.html" class="tsd-signature-type">ShipmentMethodsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:607</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L610">manage.ts:610</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3042,7 +3147,7 @@
 					<div class="tsd-signature tsd-kind-icon">Skill<wbr>Categories<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.skillcategoriesapi.html" class="tsd-signature-type">SkillCategoriesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:600</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L603">manage.ts:603</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3052,7 +3157,7 @@
 					<div class="tsd-signature tsd-kind-icon">Skills<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.skillsapi.html" class="tsd-signature-type">SkillsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:599</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L602">manage.ts:602</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3062,7 +3167,7 @@
 					<div class="tsd-signature tsd-kind-icon">Sources<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.sourcesapi.html" class="tsd-signature-type">SourcesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:601</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L604">manage.ts:604</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3072,7 +3177,7 @@
 					<div class="tsd-signature tsd-kind-icon">States<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.statesapi.html" class="tsd-signature-type">StatesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:447</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L450">manage.ts:450</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3082,7 +3187,7 @@
 					<div class="tsd-signature tsd-kind-icon">Status<wbr>External<wbr>Integration<wbr>References<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.statusexternalintegrationreferencesapi.html" class="tsd-signature-type">StatusExternalIntegrationReferencesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:448</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L451">manage.ts:451</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3092,7 +3197,7 @@
 					<div class="tsd-signature tsd-kind-icon">Sub<wbr>Categories<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.subcategoriesapi.html" class="tsd-signature-type">SubCategoriesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:604</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L607">manage.ts:607</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3102,7 +3207,7 @@
 					<div class="tsd-signature tsd-kind-icon">Survey<wbr>Options<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.surveyoptionsapi.html" class="tsd-signature-type">SurveyOptionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:449</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L452">manage.ts:452</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3112,7 +3217,7 @@
 					<div class="tsd-signature tsd-kind-icon">Survey<wbr>Question<wbr>Values<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.surveyquestionvaluesapi.html" class="tsd-signature-type">SurveyQuestionValuesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:450</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L453">manage.ts:453</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3122,7 +3227,7 @@
 					<div class="tsd-signature tsd-kind-icon">Survey<wbr>Questions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.surveyquestionsapi.html" class="tsd-signature-type">SurveyQuestionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:608</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L611">manage.ts:611</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3132,7 +3237,7 @@
 					<div class="tsd-signature tsd-kind-icon">Survey<wbr>Results<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.surveyresultsapi.html" class="tsd-signature-type">SurveyResultsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:605</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L608">manage.ts:608</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3142,7 +3247,7 @@
 					<div class="tsd-signature tsd-kind-icon">Surveys<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.surveysapi.html" class="tsd-signature-type">SurveysApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:602</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L605">manage.ts:605</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3152,7 +3257,7 @@
 					<div class="tsd-signature tsd-kind-icon">Tax<wbr>Code<wbr>Expense<wbr>Type<wbr>Exemptions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.taxcodeexpensetypeexemptionsapi.html" class="tsd-signature-type">TaxCodeExpenseTypeExemptionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:452</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L455">manage.ts:455</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3162,7 +3267,7 @@
 					<div class="tsd-signature tsd-kind-icon">Tax<wbr>Code<wbr>Product<wbr>Type<wbr>Exemptions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.taxcodeproducttypeexemptionsapi.html" class="tsd-signature-type">TaxCodeProductTypeExemptionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:453</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L456">manage.ts:456</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3172,7 +3277,7 @@
 					<div class="tsd-signature tsd-kind-icon">Tax<wbr>Code<wbr>Work<wbr>Role<wbr>Exemptions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.taxcodeworkroleexemptionsapi.html" class="tsd-signature-type">TaxCodeWorkRoleExemptionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:454</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L457">manage.ts:457</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3182,7 +3287,7 @@
 					<div class="tsd-signature tsd-kind-icon">Tax<wbr>CodeXRefs<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.taxcodexrefsapi.html" class="tsd-signature-type">TaxCodeXRefsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:612</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L615">manage.ts:615</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3192,7 +3297,7 @@
 					<div class="tsd-signature tsd-kind-icon">Tax<wbr>Codes<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.taxcodesapi.html" class="tsd-signature-type">TaxCodesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:615</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L618">manage.ts:618</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3202,7 +3307,7 @@
 					<div class="tsd-signature tsd-kind-icon">Tax<wbr>Integrations<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.taxintegrationsapi.html" class="tsd-signature-type">TaxIntegrationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:455</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L458">manage.ts:458</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3212,7 +3317,7 @@
 					<div class="tsd-signature tsd-kind-icon">Team<wbr>Members<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.teammembersapi.html" class="tsd-signature-type">TeamMembersApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:456</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L459">manage.ts:459</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3222,7 +3327,7 @@
 					<div class="tsd-signature tsd-kind-icon">Team<wbr>Roles<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.teamrolesapi.html" class="tsd-signature-type">TeamRolesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:613</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L616">manage.ts:616</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3232,7 +3337,7 @@
 					<div class="tsd-signature tsd-kind-icon">Ticket<wbr>Notes<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.ticketnotesapi.html" class="tsd-signature-type">TicketNotesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:616</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L619">manage.ts:619</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3242,7 +3347,7 @@
 					<div class="tsd-signature tsd-kind-icon">Ticket<wbr>Stopwatches<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.ticketstopwatchesapi.html" class="tsd-signature-type">TicketStopwatchesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:619</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L622">manage.ts:622</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3252,7 +3357,7 @@
 					<div class="tsd-signature tsd-kind-icon">Ticket<wbr>Syncs<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.ticketsyncsapi.html" class="tsd-signature-type">TicketSyncsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:457</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L460">manage.ts:460</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3262,7 +3367,7 @@
 					<div class="tsd-signature tsd-kind-icon">Ticket<wbr>Tasks<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.tickettasksapi.html" class="tsd-signature-type">TicketTasksApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:617</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L620">manage.ts:620</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3272,7 +3377,7 @@
 					<div class="tsd-signature tsd-kind-icon">Tickets<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.ticketsapi.html" class="tsd-signature-type">TicketsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:614</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L617">manage.ts:617</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3282,7 +3387,7 @@
 					<div class="tsd-signature tsd-kind-icon">Time<wbr>Accrual<wbr>Details<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.timeaccrualdetailsapi.html" class="tsd-signature-type">TimeAccrualDetailsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:458</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L461">manage.ts:461</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3292,7 +3397,7 @@
 					<div class="tsd-signature tsd-kind-icon">Time<wbr>Accruals<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.timeaccrualsapi.html" class="tsd-signature-type">TimeAccrualsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:459</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L462">manage.ts:462</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3302,7 +3407,7 @@
 					<div class="tsd-signature tsd-kind-icon">Time<wbr>Entries<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.timeentriesapi.html" class="tsd-signature-type">TimeEntriesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:618</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L621">manage.ts:621</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3312,7 +3417,7 @@
 					<div class="tsd-signature tsd-kind-icon">Time<wbr>Expenses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.timeexpensesapi.html" class="tsd-signature-type">TimeExpensesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:460</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L463">manage.ts:463</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3322,7 +3427,7 @@
 					<div class="tsd-signature tsd-kind-icon">Time<wbr>Period<wbr>Setups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.timeperiodsetupsapi.html" class="tsd-signature-type">TimePeriodSetupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:462</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L465">manage.ts:465</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3332,7 +3437,7 @@
 					<div class="tsd-signature tsd-kind-icon">Time<wbr>Periods<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.timeperiodsapi.html" class="tsd-signature-type">TimePeriodsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:461</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L464">manage.ts:464</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3342,7 +3447,7 @@
 					<div class="tsd-signature tsd-kind-icon">Time<wbr>Sheets<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.timesheetsapi.html" class="tsd-signature-type">TimeSheetsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:463</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L466">manage.ts:466</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3352,7 +3457,7 @@
 					<div class="tsd-signature tsd-kind-icon">Time<wbr>Zone<wbr>Setups<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.timezonesetupsapi.html" class="tsd-signature-type">TimeZoneSetupsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:465</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L468">manage.ts:468</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3362,7 +3467,7 @@
 					<div class="tsd-signature tsd-kind-icon">Time<wbr>Zones<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.timezonesapi.html" class="tsd-signature-type">TimeZonesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:464</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L467">manage.ts:467</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3372,7 +3477,7 @@
 					<div class="tsd-signature tsd-kind-icon">Today<wbr>Page<wbr>Categories<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.todaypagecategoriesapi.html" class="tsd-signature-type">TodayPageCategoriesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:620</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L623">manage.ts:623</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3382,7 +3487,7 @@
 					<div class="tsd-signature tsd-kind-icon">Track<wbr>Actions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.trackactionsapi.html" class="tsd-signature-type">TrackActionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:466</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L469">manage.ts:469</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3392,7 +3497,7 @@
 					<div class="tsd-signature tsd-kind-icon">Tracks<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.tracksapi.html" class="tsd-signature-type">TracksApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:451</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L454">manage.ts:454</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3402,7 +3507,7 @@
 					<div class="tsd-signature tsd-kind-icon">Unit<wbr>OfMeasure<wbr>Conversions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.unitofmeasureconversionsapi.html" class="tsd-signature-type">UnitOfMeasureConversionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:621</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L624">manage.ts:624</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3412,7 +3517,7 @@
 					<div class="tsd-signature tsd-kind-icon">Unit<wbr>OfMeasures<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.unitofmeasuresapi.html" class="tsd-signature-type">UnitOfMeasuresApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:622</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L625">manage.ts:625</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3422,7 +3527,7 @@
 					<div class="tsd-signature tsd-kind-icon">User<wbr>Defined<wbr>Fields<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.userdefinedfieldsapi.html" class="tsd-signature-type">UserDefinedFieldsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:623</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L626">manage.ts:626</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3432,7 +3537,7 @@
 					<div class="tsd-signature tsd-kind-icon">Warehouse<wbr>Bins<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.warehousebinsapi.html" class="tsd-signature-type">WarehouseBinsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:467</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L470">manage.ts:470</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3442,7 +3547,7 @@
 					<div class="tsd-signature tsd-kind-icon">Warehouses<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.warehousesapi.html" class="tsd-signature-type">WarehousesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:468</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L471">manage.ts:471</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3452,7 +3557,7 @@
 					<div class="tsd-signature tsd-kind-icon">Work<wbr>Role<wbr>Locations<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.workrolelocationsapi.html" class="tsd-signature-type">WorkRoleLocationsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:477</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L480">manage.ts:480</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3462,7 +3567,7 @@
 					<div class="tsd-signature tsd-kind-icon">Work<wbr>Roles<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.workrolesapi.html" class="tsd-signature-type">WorkRolesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:478</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L481">manage.ts:481</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3472,7 +3577,7 @@
 					<div class="tsd-signature tsd-kind-icon">Work<wbr>Type<wbr>External<wbr>Integration<wbr>References<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.worktypeexternalintegrationreferencesapi.html" class="tsd-signature-type">WorkTypeExternalIntegrationReferencesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:479</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L482">manage.ts:482</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3482,7 +3587,7 @@
 					<div class="tsd-signature tsd-kind-icon">Work<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.worktypesapi.html" class="tsd-signature-type">WorkTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:480</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L483">manage.ts:483</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3492,7 +3597,7 @@
 					<div class="tsd-signature tsd-kind-icon">Workflow<wbr>Action<wbr>Automate<wbr>Parameters<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.workflowactionautomateparametersapi.html" class="tsd-signature-type">WorkflowActionAutomateParametersApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:469</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L472">manage.ts:472</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3502,7 +3607,7 @@
 					<div class="tsd-signature tsd-kind-icon">Workflow<wbr>Actions<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.workflowactionsapi.html" class="tsd-signature-type">WorkflowActionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:470</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L473">manage.ts:473</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3512,7 +3617,7 @@
 					<div class="tsd-signature tsd-kind-icon">Workflow<wbr>Attachments<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.workflowattachmentsapi.html" class="tsd-signature-type">WorkflowAttachmentsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:633</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L636">manage.ts:636</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3522,7 +3627,7 @@
 					<div class="tsd-signature tsd-kind-icon">Workflow<wbr>Events<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.workfloweventsapi.html" class="tsd-signature-type">WorkflowEventsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:471</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L474">manage.ts:474</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3532,7 +3637,7 @@
 					<div class="tsd-signature tsd-kind-icon">Workflow<wbr>Notify<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.workflownotifytypesapi.html" class="tsd-signature-type">WorkflowNotifyTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:472</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L475">manage.ts:475</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3542,7 +3647,7 @@
 					<div class="tsd-signature tsd-kind-icon">Workflow<wbr>Table<wbr>Types<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.workflowtabletypesapi.html" class="tsd-signature-type">WorkflowTableTypesApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:474</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L477">manage.ts:477</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3552,7 +3657,7 @@
 					<div class="tsd-signature tsd-kind-icon">Workflow<wbr>Trigger<wbr>Options<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.workflowtriggeroptionsapi.html" class="tsd-signature-type">WorkflowTriggerOptionsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:475</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L478">manage.ts:478</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3562,7 +3667,7 @@
 					<div class="tsd-signature tsd-kind-icon">Workflow<wbr>Triggers<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.workflowtriggersapi.html" class="tsd-signature-type">WorkflowTriggersApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:476</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L479">manage.ts:479</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3572,7 +3677,7 @@
 					<div class="tsd-signature tsd-kind-icon">Workflows<wbr>Api<span class="tsd-signature-symbol">:</span> <a href="_api_api_.workflowsapi.html" class="tsd-signature-type">WorkflowsApi</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:473</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L476">manage.ts:476</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -3582,9 +3687,81 @@
 					<div class="tsd-signature tsd-kind-icon">auth<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in manage.ts:634</li>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L637">manage.ts:637</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="clientid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> clientID</h3>
+					<div class="tsd-signature tsd-kind-icon">clientID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L639">manage.ts:639</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="hosturl" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> hostURL</h3>
+					<div class="tsd-signature tsd-kind-icon">hostURL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">URL</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L638">manage.ts:638</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="getmanagecompanyinfo" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Manage<wbr>Company<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Manage<wbr>Company<wbr>Info<span class="tsd-signature-symbol">(</span>host<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, companyID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_lib_info_.managecompanyinfo.html" class="tsd-signature-type">ManageCompanyInfo</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L997">manage.ts:997</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>host: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>companyID: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_lib_info_.managecompanyinfo.html" class="tsd-signature-type">ManageCompanyInfo</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+					<a name="ismanagecompanyinfo" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> is<wbr>Manage<wbr>Company<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Manage<wbr>Company<wbr>Info<span class="tsd-signature-symbol">(</span>hostInfo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_lib_info_.managecompanyinfo.html" class="tsd-signature-type">ManageCompanyInfo</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sowderca/connectwise-manage-sdk/blob/a682400/src/manage.ts#L993">manage.ts:993</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>hostInfo: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_lib_info_.managecompanyinfo.html" class="tsd-signature-type">ManageCompanyInfo</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -3599,6 +3776,9 @@
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_helpers_assign_.html">"helpers/assign"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_lib_info_.html">"lib/info"</a>
 					</li>
 					<li class="current tsd-kind-external-module">
 						<a href="../modules/_manage_.html">"manage"</a>
@@ -4557,6 +4737,18 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_manage_.apiclient.html#authkey" class="tsd-kind-icon">auth<wbr>Key</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_manage_.apiclient.html#clientid" class="tsd-kind-icon">clientID</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_manage_.apiclient.html#hosturl" class="tsd-kind-icon">hostURL</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="_manage_.apiclient.html#getmanagecompanyinfo" class="tsd-kind-icon">get<wbr>Manage<wbr>Company<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+								<a href="_manage_.apiclient.html#ismanagecompanyinfo" class="tsd-kind-icon">is<wbr>Manage<wbr>Company<wbr>Info</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -4578,6 +4770,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
@@ -4626,7 +4819,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>

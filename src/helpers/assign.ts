@@ -1,5 +1,6 @@
+'use strict';
+
 export function assign (target: any, ...args: any[]) {
-  'use strict';
   if (target === undefined || target === null) {
     throw new TypeError('Cannot convert undefined or null to object');
   }

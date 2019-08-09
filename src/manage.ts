@@ -636,11 +636,13 @@ export class ApiClient {
     public readonly WorkflowAttachmentsApi: WorkflowAttachmentsApi;
     private readonly authKey: string;
     private readonly hostURL: URL;
+    private readonly clientID: string;
     public constructor(publicKey: string, privateKey: string);
     public constructor(publicKey: string, privateKey: string, hostInfo: string, companyID: string);
     public constructor(publicKey: string, privateKey: string, hostInfo: string, companyID: string, codeBase: string);
+    public constructor(publicKey: string, privateKey: string, hostInfo: string, companyID: string, codeBase: string, clientID: string);
     public constructor(publicKey: string, privateKey: string, hostInfo: ManageCompanyInfo);
-    public constructor(publicKey: string, privateKey: string, hostInfo?: ManageCompanyInfo | string, companyID?: string, codeBase?: string) {
+    public constructor(publicKey: string, privateKey: string, hostInfo?: ManageCompanyInfo | string, companyID?: string, codeBase?: string, clientID?: string) {
         let host: string = 'api-na.myconnectwise.net';
         let base: string = 'v2018_3';
         let company: string = 'CW';
@@ -655,6 +657,9 @@ export class ApiClient {
             base = hostInfo.Codebase;
         } else if (typeof hostInfo === 'string') {
             host = hostInfo;
+        }
+        if (clientID) {
+            this.clientID = clientID;
         }
         this.hostURL = new URL(`${base}/apis/3.0`, encodeURI(`https://${host}/`).toString());
         this.authKey = Buffer.from(`${company}+${publicKey}:${privateKey}`).toString('base64');
@@ -972,10 +977,17 @@ export class ApiClient {
         this.ProcurementSettingsApi = new ProcurementSettingsApi(this.hostURL.toString());
         this.WorkflowAttachmentsApi = new WorkflowAttachmentsApi(this.hostURL.toString());
         Object.getOwnPropertyNames(this).filter((property: string): boolean => property.toLowerCase().includes('api')).forEach((property: string): void => {
-            // @ts-ignore
-            Reflect.defineProperty(this[property], 'defaultHeaders', {
-                value: { 'Authorization': `Basic ${this.authKey}` }
-            });
+            if (this.clientID) {
+                // @ts-ignore
+                Reflect.defineProperty(this[property], 'defaultHeaders', {
+                    value: { 'Authorization': `Basic ${this.authKey}`, 'ClientID': this.clientID }
+                });
+            } else {
+                // @ts-ignore
+                Reflect.defineProperty(this[property], 'defaultHeaders', {
+                    value: { 'Authorization': `Basic ${this.authKey}` }
+                });
+            }
         });
     };
     private static isManageCompanyInfo(hostInfo: string | ManageCompanyInfo): hostInfo is ManageCompanyInfo {
